@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # По умолчанию запускаем FastAPI сайт (uvicorn). Для запуска бота
 # в Render создайте отдельный Background Worker с командой
 # `python app/bot.py` (scale=1), чтобы избежать конфликтов polling.
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["sh", "-lc", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
