@@ -50,6 +50,14 @@ def debug_static_dir():
         "files": os.listdir(os.path.join(STATIC_DIR, "images")) if os.path.exists(os.path.join(STATIC_DIR, "images")) else []
     }
 
+
+@app.get("/debug/collections")
+def debug_collections():
+    return {
+        "collections_count": len(collections),
+        "collections": collections[:2] if collections else "empty"
+    }
+
 app.mount(
     "/static",
     StaticFiles(directory=STATIC_DIR),
