@@ -2,14 +2,16 @@
 
 {% block header %}
 <header class="header">
-    <a href="/collection/{{ figure.collection_id }}" class="back-button">
-        <i class="fas fa-arrow-left"></i> Назад
-    </a>
     <h1>{{ figure.title }}</h1>
 </header>
 {% endblock %}
 
 {% block content %}
+<div class="back-wrapper">
+    <a href="/collection/{{ figure.collection_id }}" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+</div>
 <div class="figure-gallery">
     {% for image in figure.images %}
     <div class="gallery-image">

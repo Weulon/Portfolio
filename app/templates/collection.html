@@ -2,15 +2,17 @@
 
 {% block header %}
 <header class="header collection-header">
-    <a href="/" class="back-button">
-        <i class="fas fa-arrow-left"></i> Назад
-    </a>
     <h1>{{ collection.title }}</h1>
     <p class="subtitle">{{ collection.subtitle }}</p>
 </header>
 {% endblock %}
 
 {% block content %}
+<div class="back-wrapper">
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+</div>
 <div class="collection-description">
     <p>{{ collection.description }}</p>
 </div>
