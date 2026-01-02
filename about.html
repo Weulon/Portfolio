@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Каталог фигурок</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Шрифт для красивого текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для новой нижней навигации */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1A1A1A;
+            border-top: 1px solid #2A2A2A;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .nav-item:hover {
+            background: rgba(124, 77, 255, 0.1);
+        }
+
+        .nav-item.active {
+            background: rgba(124, 77, 255, 0.15);
+            border: 1px solid rgba(124, 77, 255, 0.3);
+        }
+
+        .nav-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+            background: #242424;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-icon-wrapper {
+            background: linear-gradient(135deg, #7C4DFF 0%, #9C7BFF 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
+        }
+
+        .nav-icon {
+            font-size: 20px;
+            color: #A0A0A0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-icon {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .nav-text {
+            font-size: 12px;
+            font-weight: 500;
+            color: #A0A0A0;
+            transition: all 0.3s ease;
+            margin-top: 2px;
+        }
+
+        .nav-item.active .nav-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Анимация для активного состояния */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .nav-item.active .nav-icon-wrapper {
+            animation: pulse 2s infinite;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 480px) {
+            .bottom-nav {
+                padding: 10px 0;
+            }
+
+            .nav-icon-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-icon {
+                font-size: 18px;
+            }
+
+            .nav-text {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .nav-text {
+                font-size: 10px;
+            }
+        }
+        
+        /* Добавляем отступ снизу для основного контента, чтобы не перекрывался меню */
+        .container {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+<header class="header">
+    <h1>О проекте</h1>
+</header>
+
+
+        <main class="main-content">
+            
+<style>
+    /* Стили для страницы "О проекте" */
+    .minimal-container {
+        background: #1A1A1A;
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+
+    .profile-title {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .profile-title h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: white;
+    }
+
+    .profile-subtitle {
+        font-size: 18px;
+        color: #A0A0A0;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .section-divider {
+        height: 1px;
+        background: #2A2A2A;
+        margin: 32px 0;
+    }
+
+    .contacts-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: white;
+        text-align: center;
+    }
+
+    .contacts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .contact-button {
+        display: flex;
+        align-items: center;
+        background: #121212;
+        border: 1px solid #2A2A2A;
+        border-radius: 16px;
+        padding: 24px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.2s ease;
+    }
+
+    .contact-button:hover {
+        background: #242424;
+        border-color: #7C4DFF;
+        transform: translateY(-2px);
+    }
+
+    .contact-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .contact-icon.telegram {
+        background: rgba(0, 136, 204, 0.15);
+        color: #0088cc;
+    }
+
+    .contact-icon.email {
+        background: rgba(219, 68, 55, 0.15);
+        color: #DB4437;
+    }
+
+    .contact-icon.portfolio {
+        background: rgba(0, 180, 216, 0.15);
+        color: #00B4D8;
+    }
+
+    .contact-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: white;
+    }
+
+    .contact-value {
+        font-size: 16px;
+        color: #A0A0A0;
+    }
+
+    .contact-arrow {
+        color: #7C4DFF;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 12px;
+        flex-shrink: 0;
+    }
+
+    .contact-button:hover .contact-arrow {
+        transform: translateX(4px);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .minimal-container {
+            padding: 24px;
+            margin: 16px;
+        }
+
+        .profile-title h1 {
+            font-size: 24px;
+        }
+
+        .profile-subtitle {
+            font-size: 16px;
+        }
+
+        .contact-button {
+            padding: 20px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+            margin-right: 16px;
+        }
+
+        .contact-label {
+            font-size: 17px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .minimal-container {
+            padding: 20px;
+            margin: 12px;
+        }
+
+        .contact-button {
+            padding: 18px;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            font-size: 22px;
+            margin-right: 14px;
+        }
+
+        .contact-label {
+            font-size: 16px;
+        }
+
+        .contact-value {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<div class="minimal-container">
+    <!-- Заголовок -->
+    <div class="profile-title">
+        <h1>3D Дизайнер / Скульптор</h1>
+        <p class="profile-subtitle">
+            Создаю уникальные фигурки и 3D-модели на заказ.<br>
+            Выполняю скульптинг, моделирование и анимацию для игр и коллекционных моделей.
+        </p>
+    </div>
+
+    <!-- Разделитель -->
+    <div class="section-divider"></div>
+
+    <!-- Контакты -->
+    <h2 class="contacts-title">Контакты</h2>
+
+    <div class="contacts-list">
+        <!-- Кнопка 1: Telegram -->
+        <a href="tg://resolve?domain=nickname" class="contact-button">
+            <div class="contact-icon telegram">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Написать в Telegram</div>
+                <div class="contact-value">@nickname</div>
+            </div>
+            <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- Кнопка 2: Email -->
+        <a href="mailto:artist@example.com" class="contact-button">
+            <div class="contact-icon email">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Написать на Email</div>
+                <div class="contact-value">artist@example.com</div>
+            </div>
+            <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- Кнопка 3: ArtStation -->
+        <a href="https://www.artstation.com" target="_blank" class="contact-button">
+            <div class="contact-icon portfolio">
+                <i class="fab fa-artstation"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Портфолио на ArtStation</div>
+                <div class="contact-value">artstation.com/yourprofile</div>
+            </div>
+            <div class="contact-arrow">→</div>
+        </a>
+    </div>
+</div>
+
+<script>
+    // Анимация появления кнопок
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.contact-button');
+        buttons.forEach((btn, i) => {
+            // Начальное состояние
+            btn.style.opacity = '0';
+            btn.style.transform = 'translateY(20px)';
+
+            // Анимация с задержкой
+            setTimeout(() => {
+                btn.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                btn.style.opacity = '1';
+                btn.style.transform = 'translateY(0)';
+            }, i * 100);
+        });
+
+        // Анимация стрелки при наведении
+        buttons.forEach(btn => {
+            const arrow = btn.querySelector('.contact-arrow');
+            btn.addEventListener('mouseenter', () => {
+                arrow.style.transition = 'transform 0.2s ease';
+                arrow.style.transform = 'translateX(4px)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                arrow.style.transform = 'translateX(0)';
+            });
+        });
+    });
+</script>
+
+        </main>
+    </div>
+
+    <!-- Нижнее меню -->
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item ">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">🏠</span>
+            </div>
+            <span class="nav-text">Главная</span>
+        </a>
+        <a href="/collection/robot-ivan" class="nav-item ">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">🛍</span>
+            </div>
+            <span class="nav-text">Каталог</span>
+        </a>
+        <a href="/about" class="nav-item active">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">👤</span>
+            </div>
+            <span class="nav-text">О проекте</span>
+        </a>
+    </nav>
+
+    <script>
+        // Инициализация Telegram WebApp
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+
+        // Плавная загрузка
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.profile-animate').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Определяем активную страницу при загрузке
+            const currentPath = window.location.pathname;
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (currentPath === href || 
+                    (href.includes('/collection') && currentPath.includes('/collection'))) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
