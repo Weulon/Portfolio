@@ -33,6 +33,15 @@ collections = [
         "description": "Тематические фигурки для праздников и особых событий. Ограниченные серии к каждому сезону.",
         "badge": "SOLD OUT"
     }
+    ,
+    {
+        "id": "neo-automatons",
+        "title": "Neo Automatons",
+        "subtitle": "Prototype Series",
+        "image": "/static/images/neo-automatons.jpg",
+        "description": "Экспериментальная серия прототипов с модульными компонентами и нестандартными материалами.",
+        "badge": "NEW"
+    }
 ]
 
 figures = [
@@ -134,6 +143,55 @@ figures = [
             "/static/images/winter-2.jpg"
         ],
         "is_available": False
+    },
+    {
+        "id": "ri-003",
+        "collection_id": "robot-ivan",
+        "title": "Ivan Sentinel",
+        "price": "$230",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Страж роботов с усиленной бронёй и светящимися глазами. Ограниченная серия.",
+        "size": "24 см",
+        "material": "Металл, смола, светодиоды",
+        "images": [
+            "/static/images/ivan-4.jpg",
+            "/static/images/ivan-5.jpg"
+        ],
+        "is_available": True
+    }
+    ,
+    {
+        "id": "na-001",
+        "collection_id": "neo-automatons",
+        "title": "Prototype A1",
+        "price": "$350",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Первый прототип из серии Neo Automatons с регенерирующей подсветкой и сменными панелями.",
+        "size": "28 см",
+        "material": "Алюминий, смола, RGB LED",
+        "images": [
+            "/static/images/neo-1.jpg",
+            "/static/images/neo-2.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "na-002",
+        "collection_id": "neo-automatons",
+        "title": "Prototype B2",
+        "price": "$370",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Улучшенная версия B2 с интегрированной электроникой и эффектом свечения в темноте.",
+        "size": "30 см",
+        "material": "Титан, смола, люминесцентная краска",
+        "images": [
+            "/static/images/neo-3.jpg",
+            "/static/images/neo-4.jpg"
+        ],
+        "is_available": True
     }
 ]
 
