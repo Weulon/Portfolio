@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header class="header collection-header">
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+    <h1>{{ collection.title }}</h1>
+    <p class="subtitle">{{ collection.subtitle }}</p>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="collection-description">
+    <p>{{ collection.description }}</p>
+</div>
+
+<div class="figures-list">
+    {% for figure in figures %}
+    <a href="/figure/{{ figure.id }}" class="figure-item">
+        <div class="figure-item-image">
+            <img src="{{ figure.images[0] }}" alt="{{ figure.title }}" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text={{ figure.title|urlencode }}'">
+        </div>
+        <div class="figure-item-content">
+            <h3 class="figure-item-title">{{ figure.title }}</h3>
+            <div class="figure-item-price">{{ figure.price }}</div>
+            <div class="figure-item-meta">
+                <span class="status status-{{ figure.status }}">{{ figure.status_text }}</span>
+                <span class="figure-item-size">{{ figure.size }}</span>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

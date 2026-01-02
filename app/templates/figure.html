@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header class="header">
+    <a href="/collection/{{ figure.collection_id }}" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+    <h1>{{ figure.title }}</h1>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="figure-gallery">
+    {% for image in figure.images %}
+    <div class="gallery-image">
+        <img src="{{ image }}" alt="{{ figure.title }}" onerror="this.src='https://via.placeholder.com/400x400/1A1A1A/7C4DFF?text={{ figure.title|urlencode }}'">
+    </div>
+    {% endfor %}
+</div>
+
+<div class="figure-details">
+    <div class="details-grid">
+        <div class="detail-item">
+            <span class="detail-label">Цена</span>
+            <span class="detail-value price">{{ figure.price }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Статус</span>
+            <span class="status status-{{ figure.status }}">{{ figure.status_text }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Размер</span>
+            <span class="detail-value">{{ figure.size }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Материал</span>
+            <span class="detail-value">{{ figure.material }}</span>
+        </div>
+    </div>
+
+    <div class="figure-description">
+        <h3>Описание</h3>
+        <p>{{ figure.description }}</p>
+    </div>
+
+    <div class="figure-actions">
+        <a href="tg://resolve?domain=author_example" class="contact-btn">
+            <i class="fab fa-telegram"></i> Написать автору
+        </a>
+    </div>
+</div>
+{% endblock %}
