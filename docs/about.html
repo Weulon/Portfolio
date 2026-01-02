@@ -371,41 +371,65 @@
             <div class="contact-arrow">→</div>
         </a>
 
-        <!-- Кнопка 3: ArtStation -->
-        <a href="https://www.artstation.com" target="_blank" class="contact-button">
-            <div class="contact-icon portfolio">
+        <!-- Кнопка 1: Telegram -->
+        <a href="tg://resolve?domain=dikayl" class="contact-button">
+            <div class="contact-icon telegram">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Написать в Telegram</div>
+                <div class="contact-value">@dikayl</div>
+            </div>
+            <span class="contact-arrow">→</span>
+        </a>
+
+        <!-- Кнопка 2: ArtStation -->
+        <a href="https://di.kayl.artstation.com" target="_blank" class="contact-button">
+            <div class="contact-icon artstation">
                 <i class="fab fa-artstation"></i>
             </div>
             <div class="contact-info">
                 <div class="contact-label">Портфолио на ArtStation</div>
-                <div class="contact-value">artstation.com/yourprofile</div>
+                <div class="contact-value">di.kayl.artstation.com</div>
             </div>
-            <div class="contact-arrow">→</div>
+            <span class="contact-arrow">→</span>
         </a>
-    </div>
-</div>
 
-<script>
-    // Анимация появления кнопок
-    document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.contact-button');
-        buttons.forEach((btn, i) => {
-            // Начальное состояние
-            btn.style.opacity = '0';
-            btn.style.transform = 'translateY(20px)';
+        <!-- Кнопка 3: Behance -->
+        <a href="https://www.behance.net/c572f24c" target="_blank" class="contact-button">
+            <div class="contact-icon behance">
+                <i class="fab fa-behance"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Behance</div>
+                <div class="contact-value">behance.net/c572f24c</div>
+            </div>
+            <span class="contact-arrow">→</span>
+        </a>
 
-            // Анимация с задержкой
-            setTimeout(() => {
-                btn.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                btn.style.opacity = '1';
-                btn.style.transform = 'translateY(0)';
-            }, i * 100);
-        });
+        <!-- Кнопка 4: TikTok -->
+        <a href="https://www.tiktok.com/@neko_cgi?_r=1&_t=ZS-92kM6zHqSUD" target="_blank" class="contact-button">
+            <div class="contact-icon tiktok">
+                <i class="fab fa-tiktok"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">TikTok</div>
+                <div class="contact-value">@neko_cgi</div>
+            </div>
+            <span class="contact-arrow">→</span>
+        </a>
 
-        // Анимация стрелки при наведении
-        buttons.forEach(btn => {
-            const arrow = btn.querySelector('.contact-arrow');
-            btn.addEventListener('mouseenter', () => {
+        <!-- Кнопка 5: Instagram -->
+        <a href="https://www.instagram.com/neko_cgi" target="_blank" class="contact-button">
+            <div class="contact-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="contact-info">
+                <div class="contact-label">Instagram</div>
+                <div class="contact-value">@neko_cgi</div>
+            </div>
+            <span class="contact-arrow">→</span>
+        </a>
                 arrow.style.transition = 'transform 0.2s ease';
                 arrow.style.transform = 'translateX(4px)';
             });
