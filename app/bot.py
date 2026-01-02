@@ -2,6 +2,7 @@ import logging
 import os
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes
+from urllib.parse import urlparse
 
 # ========================
 # Настройки (через переменные окружения)
@@ -11,6 +12,9 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
 # Укажите публичный URL вашего сайта (GitHub Pages) в WEBAPP_URL
 WEBAPP_URL = os.environ.get("WEBAPP_URL", "")
+TELEGRAM_WEBHOOK_URL = os.environ.get("TELEGRAM_WEBHOOK_URL", "")
+PORT = int(os.environ.get("PORT", "8443"))
+USE_WEBHOOK = os.environ.get("USE_WEBHOOK", "0").lower() in ("1", "true", "yes")
 
 
 # ========================
@@ -57,8 +61,16 @@ def main():
     # Регистрируем обработчики
     application.add_handler(CommandHandler("start", start))
 
-    logger.info("Бот запущен. Ждем сообщений...")
-    application.run_polling()
+    if USE_WEBHOOK and TELEGRAM_WEBHOOK_URL:
+        # Запускаем в режиме webhook. Определяем путь из TELEGRAM_WEBHOOK_URL
+        parsed = urlparse(TELEGRAM_WEBHOOK_URL)
+        path = parsed.path or "/"
+        # PTB ожидает путь без домена
+        logger.info(f"Запуск в режиме webhook на {TELEGRAM_WEBHOOK_URL} (listen 0.0.0.0:{PORT}, path={path})")
+        application.run_webhook(listen="0.0.0.0", port=PORT, path=path, webhook_url=TELEGRAM_WEBHOOK_URL)
+    else:
+        logger.info("Бот запущен в режиме polling. Ждем сообщений...")
+        application.run_polling()
 
 # ========================
 # Запуск
