@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: portfolio-bot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: WEBAPP_URL
+        sync: false
+
+  - type: static site
+    name: portfolio-pages
+    staticPublishPath: ./docs
+    buildCommand: python app/build_static.py
+    envVars: []

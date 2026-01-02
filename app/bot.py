@@ -1,14 +1,16 @@
 import logging
+import os
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # ========================
-# Настройки
+# Настройки (через переменные окружения)
 # ========================
-TELEGRAM_BOT_TOKEN = "8579039126:AAFduTOX1YZKw0Y41T-rCWEuygLC_cVdSMw"
+# Установите TELEGRAM_BOT_TOKEN в переменных окружения для безопасности
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
-# сюда вставь свой ngrok HTTPS URL
-WEBAPP_URL = "https://authorless-theo-apogeotropic.ngrok-free.dev"
+# Укажите публичный URL вашего сайта (GitHub Pages) в WEBAPP_URL
+WEBAPP_URL = os.environ.get("WEBAPP_URL", "")
 
 
 # ========================
@@ -26,9 +28,12 @@ logger = logging.getLogger(__name__)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Обработчик команды /start"""
-    keyboard = [
-        [InlineKeyboardButton("🎨 Открыть каталог", web_app=WebAppInfo(url=WEBAPP_URL))]
-    ]
+    # если WEBAPP_URL не задан, кнопка не будет добавлена
+    keyboard = []
+    if WEBAPP_URL:
+        keyboard = [
+            [InlineKeyboardButton("🎨 Открыть каталог", web_app=WebAppInfo(url=WEBAPP_URL))]
+        ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
@@ -43,6 +48,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     """Запуск бота"""
+    if not TELEGRAM_BOT_TOKEN:
+        logger.error("TELEGRAM_BOT_TOKEN не задан. Установите переменную окружения TELEGRAM_BOT_TOKEN и повторите запуск.")
+        return
+
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
 
     # Регистрируем обработчики
