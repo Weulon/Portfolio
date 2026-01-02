@@ -1,8 +1,13 @@
 import os
+import sys
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
+# Получаем директорию текущего файла (app/) и добавляем в sys.path
+APP_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, APP_DIR_PATH)
 
 # Импортируем ВСЕ нужные данные из data.py
 try:
