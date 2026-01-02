@@ -1,7 +1,13 @@
 import logging
 import os
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from telegram.error import Conflict
 from telegram.ext import Application, CommandHandler, ContextTypes
+import asyncio
+# Backoff при конфликте getUpdates
+_conflict_backoff = 1
+_conflict_backoff_max = 60
+_conflict_lock = asyncio.Lock()
 from urllib.parse import urlparse
 
 # ========================
@@ -46,6 +52,32 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=reply_markup
     )
 
+
+async def error_handler(update: object | None, context: ContextTypes.DEFAULT_TYPE):
+    """Глобальный обработчик ошибок для Application.
+    Перехватывает telegram.error.Conflict и логирует предупреждение вместо падения приложения.
+    """
+    err = context.error
+    # Conflict возникает, когда другой экземпляр использует getUpdates (polling)
+    if isinstance(err, Conflict):
+        logger.warning(
+            "telegram.error.Conflict: терминовано другим getUpdates; убедитесь, что запущен только один экземпляр бота."
+        )
+        # Экспоненциальный backoff, защищённый lock'ом
+        try:
+            async with _conflict_lock:
+                wait = _conflict_backoff
+                logger.info(f"Waiting {wait}s before retrying polling")
+                await asyncio.sleep(wait)
+                # увеличиваем backoff для следующего раза
+                globals()['_conflict_backoff'] = min(_conflict_backoff * 2, _conflict_backoff_max)
+        except Exception:
+            pass
+        return
+
+    # Для остальных ошибок — логируем стектрейс
+    logger.exception("Unhandled exception in update handler", exc_info=err)
+
 # ========================
 # Основная функция
 # ========================
@@ -60,6 +92,8 @@ def main():
 
     # Регистрируем обработчики
     application.add_handler(CommandHandler("start", start))
+    # Регистрируем глобальный обработчик ошибок
+    application.add_error_handler(error_handler)
 
     if USE_WEBHOOK and TELEGRAM_WEBHOOK_URL:
         # Запускаем в режиме webhook. Определяем путь из TELEGRAM_WEBHOOK_URL

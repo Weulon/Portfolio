@@ -1,11 +1,25 @@
 services:
   - type: web
-    name: portfolio-bot
+    name: portfolio-web
     runtime: docker
     plan: free
+    # FastAPI приложение будет отвечать на /health
     healthCheckPath: /health
     envVars:
+      - key: WEBAPP_URL
+        sync: false
+
+  - type: worker
+    name: portfolio-bot-worker
+    runtime: docker
+    plan: free
+    startCommand: python app/bot.py
+    envVars:
       - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: USE_WEBHOOK
+        sync: false
+      - key: TELEGRAM_WEBHOOK_URL
         sync: false
       - key: WEBAPP_URL
         sync: false

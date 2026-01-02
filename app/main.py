@@ -33,6 +33,11 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 app = FastAPI()
 
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 app.mount(
     "/static",
     StaticFiles(directory=STATIC_DIR),
