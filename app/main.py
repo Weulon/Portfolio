@@ -38,6 +38,18 @@ app = FastAPI()
 def health():
     return {"status": "ok"}
 
+
+@app.get("/debug/static-dir")
+def debug_static_dir():
+    import os
+    return {
+        "STATIC_DIR": STATIC_DIR,
+        "exists": os.path.exists(STATIC_DIR),
+        "images_path": os.path.join(STATIC_DIR, "images"),
+        "images_exist": os.path.exists(os.path.join(STATIC_DIR, "images")),
+        "files": os.listdir(os.path.join(STATIC_DIR, "images")) if os.path.exists(os.path.join(STATIC_DIR, "images")) else []
+    }
+
 app.mount(
     "/static",
     StaticFiles(directory=STATIC_DIR),
