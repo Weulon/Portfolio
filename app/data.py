@@ -162,6 +162,55 @@ figures = [
     }
     ,
     {
+        "id": "ri-004",
+        "collection_id": "robot-ivan",
+        "title": "Ivan Engineer",
+        "price": "$215",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Инженер-робот с инструментами и модульной платформой для апгрейда.",
+        "size": "23 см",
+        "material": "Металл, пластик, латунь",
+        "images": [
+            "/static/images/ivan-2.jpg",
+            "/static/images/mechanic-1.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-005",
+        "collection_id": "robot-ivan",
+        "title": "Ivan Scout",
+        "price": "$199",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Разведчик с сенсорным блоком и скрытыми колёсами для быстрого перемещения.",
+        "size": "21 см",
+        "material": "Пластик, металл, резина",
+        "images": [
+            "/static/images/explorer-2.jpg",
+            "/static/images/ivan-1.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-006",
+        "collection_id": "robot-ivan",
+        "title": "Ivan Medic",
+        "price": "$225",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Медицинский робот с набором инструментов для экстренной помощи и светодиодной индикацией.",
+        "size": "22 см",
+        "material": "Металл, пластик, светодиоды",
+        "images": [
+            "/static/images/ivan-3.jpg",
+            "/static/images/portal-1.jpg"
+        ],
+        "is_available": True
+    }
+    ,
+    {
         "id": "na-001",
         "collection_id": "neo-automatons",
         "title": "Prototype A1",
