@@ -18,7 +18,7 @@ collections = [
         "badge": None
     },
     {
-        "id": "Pendant",
+        "id": "Brelok",
         "title": "Brelok",
         "subtitle": "Авторские брелки",
         "image": "/static/images/Brelok/1.jpg",
