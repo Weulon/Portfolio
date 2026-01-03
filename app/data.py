@@ -19,7 +19,7 @@ collections = [
     },
     {
         "id": "Pendant",
-        "title": "Pendrant",
+        "title": "Брелки",
         "subtitle": "Авторские брелки",
         "image": "/static/images/Brelok/1.jpg",
         "description": "Закажите брелки с индивидуальный дизайном",
@@ -47,14 +47,29 @@ collections = [
 figures = [
     {
         "id": "ri-002",
-        "collection_id": "Pendant",
-        "title": "LM_08",
+        "collection_id": "Брелки",
+        "title": "PD_10",
         "price": "$4",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
         "size": "5 см",
-        "material": "PLA",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/2.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Брелки",
+        "title": "PD_09",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
         "images": [
             "/static/images/Brelok/1.jpg"
         ],
