@@ -48,24 +48,24 @@ figures = [
     {
         "id": "ri-001",
         "collection_id": "robot-ivan",
-        "title": "Ivan Protector",
-        "price": "$240",
+        "title": "Fanny Aspirant",
+        "price": "$150",
         "status": "available",
         "status_text": "В наличии",
-        "description": "Робот-защитник с подвижными элементами и светящимися деталями. Ограниченная серия из 50 экземпляров.",
-        "size": "25 см",
+        "description": "MLBB Collection",
+        "size": "17 см",
         "material": "Металл, пластик, светодиоды",
         "images": [
-            "/static/images/ivan-1.jpg",
-            "/static/images/ivan-2.jpg",
-            "/static/images/ivan-3.jpg"
+            "/static/images/fanny-1.jpg",
+            "/static/images/fanny-2.jpg",
+            "/static/images/fanny-3.jpg"
         ],
         "is_available": True
     },
     {
         "id": "ri-002",
         "collection_id": "robot-ivan",
-        "title": "Ivan Explorer",
+        "title": "Флорин",
         "price": "$210",
         "status": "sold",
         "status_text": "Продано",
