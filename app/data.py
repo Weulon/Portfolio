@@ -34,14 +34,14 @@ collections = [
         "badge": "SOLD OUT"
     }
     ,
-    {
-        "id": "neo-automatons",
-        "title": "Neo Automatons",
-        "subtitle": "Prototype Series",
-        "image": "/static/images/neo-automatons.jpg",
-        "description": "Экспериментальная серия прототипов с модульными компонентами и нестандартными материалами.",
-        "badge": "NEW"
-    }
+    # {
+    #     "id": "neo-automatons",
+    #     "title": "Neo Automatons",
+    #     "subtitle": "Prototype Series",
+    #     "image": "/static/images/neo-automatons.jpg",
+    #     "description": "Экспериментальная серия прототипов с модульными компонентами и нестандартными материалами.",
+    #     "badge": "NEW"
+    # }
 ]
 
 figures = [
