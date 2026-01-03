@@ -4,13 +4,6 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-# Страница курса «Подготовка 3D-модели к печати»
-@app.get("/courses/printing", response_class=HTMLResponse)
-def course_printing_page(request: Request):
-    return templates.TemplateResponse(
-        "course_printing.html",
-        {"request": request},
-    )
 import os
 import sys
 from fastapi import FastAPI, Request
@@ -21,6 +14,15 @@ from fastapi.templating import Jinja2Templates
 # Получаем директорию текущего файла (app/) и добавляем в sys.path
 APP_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, APP_DIR_PATH)
+app = FastAPI()
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
+# Страница курса «Подготовка 3D-модели к печати»
+@app.get("/courses/printing", response_class=HTMLResponse)
+def course_printing_page(request: Request):
+    return templates.TemplateResponse(
+        "course_printing.html",
+        {"request": request},
+    )
 
 # Импортируем ВСЕ нужные данные из data.py
 try:
