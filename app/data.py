@@ -106,7 +106,7 @@ figures = [
         "size": "18 см",
         "material": "PLA",
         "images": [
-            "/static/images/mia-1.jpg"
+            "/static/images/mia-1.png"
         ],
         "is_available": True
     },
@@ -146,7 +146,7 @@ figures = [
         "title": "Diggie",
         "price": "$130",
         "status": "available",
-        "status_text": "Под заказ",
+        "status_text": "На заказ",
         "description": "MLBB Collection",
         "size": "19 см",
         "material": "PLA",
@@ -169,7 +169,7 @@ figures = [
         "images": [
             "/static/images/lilia-1.jpg"
         ],
-        "is_available": True
+        "is_available": False
     },
     {
         "id": "ri-005",
@@ -182,7 +182,7 @@ figures = [
         "size": "21 см",
         "material": "PLA",
         "images": [
-            "/static/images/granger-1.jpg"
+            "/static/images/grandger-1.jpg"
         ],
         "is_available": True
     },
