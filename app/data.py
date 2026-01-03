@@ -194,7 +194,7 @@ figures = [
             "/static/images/Other/9.jpg"
         ],
         "is_available": True
-        ,"pinned": true
+        ,"pinned": True
     },
     {
         "id": "ri-002",
