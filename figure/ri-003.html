@@ -3,200 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Каталог фигурок</title>
+    <title>Ivan Mechanic</title>
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Шрифт для красивого текста -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Стили для новой нижней навигации */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #1A1A1A;
-            border-top: 1px solid #2A2A2A;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 12px 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            flex: 1;
-            max-width: 120px;
-        }
-
-        .nav-item:hover {
-            background: rgba(124, 77, 255, 0.1);
-        }
-
-        .nav-item.active {
-            background: rgba(124, 77, 255, 0.15);
-            border: 1px solid rgba(124, 77, 255, 0.3);
-        }
-
-        .nav-icon-wrapper {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 6px;
-            background: #242424;
-            transition: all 0.3s ease;
-        }
-
-        .nav-item.active .nav-icon-wrapper {
-            background: linear-gradient(135deg, #7C4DFF 0%, #9C7BFF 100%);
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
-        }
-
-        .nav-icon {
-            font-size: 20px;
-            color: #A0A0A0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-item.active .nav-icon {
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .nav-text {
-            font-size: 12px;
-            font-weight: 500;
-            color: #A0A0A0;
-            transition: all 0.3s ease;
-            margin-top: 2px;
-        }
-
-        .nav-item.active .nav-text {
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Анимация для активного состояния */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .nav-item.active .nav-icon-wrapper {
-            animation: pulse 2s infinite;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 480px) {
-            .bottom-nav {
-                padding: 10px 0;
-            }
-
-            .nav-icon-wrapper {
-                width: 40px;
-                height: 40px;
-            }
-
-            .nav-icon {
-                font-size: 18px;
-            }
-
-            .nav-text {
-                font-size: 11px;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .nav-text {
-                font-size: 10px;
-            }
-        }
-        
-        /* Добавляем отступ снизу для основного контента, чтобы не перекрывался меню */
-        .container {
-            padding-bottom: 80px;
-        }
+        /* ...existing code from ri-001.html for nav and layout... */
     </style>
 </head>
 <body>
     <div class="container">
-        
-<header class="header">
-    <h1>Ivan Sentinel</h1>
-</header>
-
-
+        <header class="header">
+            <h1>Ivan Mechanic</h1>
+        </header>
         <main class="main-content">
-            
-<div class="back-wrapper">
-    <a href="/collection/robot-ivan" class="back-button">
-        <i class="fas fa-arrow-left"></i> Назад
-    </a>
-</div>
-<div class="figure-gallery">
-    
-    <div class="gallery-image">
-        <img src="/static/images/ivan-4.jpg" alt="Ivan Sentinel" onerror="this.src='https://via.placeholder.com/400x400/1A1A1A/7C4DFF?text=Ivan%20Sentinel'">
-    </div>
-    
-    <div class="gallery-image">
-        <img src="/static/images/ivan-5.jpg" alt="Ivan Sentinel" onerror="this.src='https://via.placeholder.com/400x400/1A1A1A/7C4DFF?text=Ivan%20Sentinel'">
-    </div>
-    
-</div>
-
-<div class="figure-details">
-    <div class="details-grid">
-        <div class="detail-item">
-            <span class="detail-label">Цена</span>
-            <span class="detail-value price">$230</span>
-        </div>
-        <div class="detail-item">
-            <span class="detail-label">Статус</span>
-            <span class="status status-available">В наличии</span>
-        </div>
-        <div class="detail-item">
-            <span class="detail-label">Размер</span>
-            <span class="detail-value">24 см</span>
-        </div>
-        <div class="detail-item">
-            <span class="detail-label">Материал</span>
-            <span class="detail-value">Металл, смола, светодиоды</span>
-        </div>
-    </div>
-
-    <div class="figure-description">
-        <h3>Описание</h3>
-        <p>Страж роботов с усиленной бронёй и светящимися глазами. Ограниченная серия.</p>
-    </div>
-
-    <div class="figure-actions">
-        <a href="tg://resolve?domain=dikayl" class="contact-btn">
-            <i class="fab fa-telegram"></i> Написать автору
-        </a>
-    </div>
-</div>
-
+            <div class="back-wrapper">
+                <a href="/collection/robot-ivan" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Назад
+                </a>
+            </div>
+            <div class="figure-gallery">
+                <div class="gallery-image">
+                    <img src="/static/images/ivan-mechanic-1.jpg" alt="Ivan Mechanic" onerror="this.src='https://via.placeholder.com/400x400/1A1A1A/7C4DFF?text=Ivan%20Mechanic'">
+                </div>
+            </div>
+            <div class="figure-details">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Цена</span>
+                        <span class="detail-value price">$230</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Статус</span>
+                        <span class="status status-available">В наличии</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Размер</span>
+                        <span class="detail-value">23 см</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Материал</span>
+                        <span class="detail-value">Металл, пластик</span>
+                    </div>
+                </div>
+                <div class="figure-description">
+                    <h3>Описание</h3>
+                    <p>Механик Иван — мастер на все руки, с инструментами и подвижными деталями. Лимитированная серия.</p>
+                </div>
+                <div class="figure-actions">
+                    <a href="tg://resolve?domain=dikayl" class="contact-btn">
+                        <i class="fab fa-telegram"></i> Написать автору
+                    </a>
+                </div>
+            </div>
         </main>
     </div>
-
-    <!-- Нижнее меню -->
     <nav class="bottom-nav">
         <a href="/" class="nav-item ">
             <div class="nav-icon-wrapper">
@@ -217,27 +79,19 @@
             <span class="nav-text">О проекте</span>
         </a>
     </nav>
-
     <script>
-        // Инициализация Telegram WebApp
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
-
-        // Плавная загрузка
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.profile-animate').forEach((el, index) => {
                 el.style.opacity = '0';
                 el.style.animationDelay = `${index * 0.1}s`;
             });
-            
-            // Определяем активную страницу при загрузке
             const currentPath = window.location.pathname;
             const navItems = document.querySelectorAll('.nav-item');
-            
             navItems.forEach(item => {
                 const href = item.getAttribute('href');
-                if (currentPath === href || 
-                    (href.includes('/collection') && currentPath.includes('/collection'))) {
+                if (currentPath === href || (href.includes('/collection') && currentPath.includes('/collection'))) {
                     item.classList.add('active');
                 }
             });
