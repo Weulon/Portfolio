@@ -46,7 +46,7 @@ collections = [
 
 figures = [
     {
-        "id": "pd-017",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_17",
         "price": "$4",
@@ -61,7 +61,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-016",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_16",
         "price": "$4",
@@ -76,7 +76,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-015",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_15",
         "price": "$4",
@@ -91,7 +91,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-014",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_14",
         "price": "$4",
@@ -106,7 +106,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-013",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_13",
         "price": "$4",
@@ -121,7 +121,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-012",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_12",
         "price": "$4",
@@ -136,7 +136,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-011",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_11",
         "price": "$4",
@@ -151,7 +151,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-010",
+        "id": "ri-002",
         "collection_id": "Brelok",
         "title": "PD_10",
         "price": "$4",
@@ -166,7 +166,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "pd-009",
+        "id": "ri-002",
         "collection_id": "Брелки",
         "title": "PD_09",
         "price": "$4",
@@ -181,7 +181,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-008",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_08",
         "price": "$240",
@@ -194,9 +194,10 @@ figures = [
             "/static/images/Other/9.jpg"
         ],
         "is_available": True
+        ,"pinned": true
     },
     {
-        "id": "lm-007",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_07",
         "price": "$265",
@@ -211,7 +212,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-006",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_06",
         "price": "$260",
@@ -226,7 +227,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-005",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_05",
         "price": "$180",
@@ -241,7 +242,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-004",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_04",
         "price": "$230",
@@ -256,7 +257,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-003",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_03",
         "price": "$220",
@@ -271,7 +272,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-002",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_02",
         "price": "$230",
@@ -286,7 +287,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "lm-001",
+        "id": "ri-002",
         "collection_id": "LM_Collection",
         "title": "LM_01",
         "price": "$250",
@@ -300,32 +301,6 @@ figures = [
         ],
         "is_available": True
     },
-        {
-            "id": "LM_featured",
-            "collection_id": "LM_Collection",
-            "title": "Индивидуальная фигурка",
-            "price": "По запросу",
-            "status": "featured",
-            "status_text": "Закрепленный товар",
-            "description": "Закажите уникальную фигурку, созданную специально для вас. Индивидуальный дизайн, размер и материалы по вашему желанию.",
-            "size": "Любой",
-            "material": "PLA, Resin, по запросу",
-            "images": [
-                "/static/images/Other/featured.jpg"
-            ],
-            "is_available": True,
-            "button": {
-                "text": "Заказать индивидуальную фигурку",
-                "action": "order_custom_figure"
-            },
-            "reference_figure": {
-                "title": "LM_03",
-                "image": "/static/images/Other/4.jpg",
-                "price": "$220",
-                "size": "19 см",
-                "material": "PLA"
-            }
-        },
     {
         "id": "ri-001",
         "collection_id": "ML_Collection",
@@ -344,7 +319,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "argus-ml",
+        "id": "ri-002",
         "collection_id": "ML_Collection",
         "title": "Аргус",
         "price": "$160",
@@ -564,7 +539,12 @@ def get_figure(figure_id):
 
 def get_figures_by_collection(collection_id):
     """Получить все фигурки в коллекции"""
-    return [f for f in figures if f["collection_id"] == collection_id]
+    figs = [f for f in figures if f["collection_id"] == collection_id]
+    if collection_id == "LM_Collection":
+        pinned = [f for f in figs if f.get("pinned")]
+        others = [f for f in figs if not f.get("pinned")]
+        return pinned + others
+    return figs
 
 def get_all_figures():
     """Получить все фигурки"""

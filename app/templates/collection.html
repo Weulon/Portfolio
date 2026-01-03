@@ -19,26 +19,45 @@
 
 {# Блок закрепленного товара для LM_Collection #}
 {% if collection.id == "LM_Collection" %}
-    {% set featured = None %}
+    {% set pinned = None %}
     {% for figure in figures %}
-        {% if figure.status == "featured" %}
-            {% set featured = figure %}
+        {% if figure.pinned %}
+            {% set pinned = figure %}
         {% endif %}
     {% endfor %}
-    {% if featured %}
-    <div class="featured-figure">
+    {% if pinned %}
+    <div class="featured-figure" style="border: 3px solid #ff9800; background: linear-gradient(90deg, #fffbe7 60%, #ffe0b2 100%); box-shadow: 0 4px 16px #ff980055; border-radius: 18px; margin-bottom: 24px;">
         <div class="featured-figure-image">
-            <img src="{{ featured.images[0] }}" alt="{{ featured.title }}">
+            <img src="{{ pinned.images[0] }}" alt="{{ pinned.title }}">
         </div>
         <div class="featured-figure-content">
-            <h2>{{ featured.title }}</h2>
-            <p>{{ featured.description }}</p>
-            <a href="https://t.me/dikayl" target="_blank" class="featured-figure-button">
-                <span class="tg-icon">&#128236;</span>
-                {{ featured.button.text }}
-            </a>
+            <h2 style="color:#ff9800;">{{ pinned.title }} <span style="font-size:0.7em; background:#ff9800; color:#fff; border-radius:6px; padding:2px 8px; margin-left:8px;">Закрепленный</span></h2>
+            <p>{{ pinned.description }}</p>
+            <button class="featured-figure-action" onclick="openOrderInfo()" style="background: linear-gradient(90deg, #ff9800 60%, #ffb74d 100%); color: #fff; font-weight: bold; border: none; border-radius: 8px; padding: 14px 32px; font-size: 1.2em; box-shadow: 0 2px 8px #ff980055; cursor: pointer; transition: background 0.2s; animation: pulse 1.5s infinite alternate;">Индивидуальный заказ</button>
         </div>
     </div>
+    <div id="orderInfoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+        <div style="background:#fffbe7; border-radius:16px; max-width:420px; margin:auto; padding:32px 24px; box-shadow:0 8px 32px #ff980099; position:relative;">
+            <button onclick="closeOrderInfo()" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5em; color:#ff9800; cursor:pointer;">&times;</button>
+            <h3 style="color:#ff9800; margin-bottom:12px;">Индивидуальный заказ</h3>
+            <p>Вы можете заказать уникальную фигурку по вашему эскизу или идее. Обсудите детали с автором и получите эксклюзивную работу!</p>
+            <a href="https://t.me/testobotnub_bot" target="_blank" style="display:inline-block; margin-top:18px; background:#ff9800; color:#fff; font-weight:bold; border-radius:8px; padding:12px 28px; font-size:1.1em; text-decoration:none; box-shadow:0 2px 8px #ff980055;">Написать автору</a>
+        </div>
+    </div>
+    <style>
+    @keyframes pulse {
+        0% { box-shadow: 0 2px 8px #ff980055; }
+        100% { box-shadow: 0 2px 24px #ff9800aa; }
+    }
+    </style>
+    <script>
+    function openOrderInfo() {
+        document.getElementById('orderInfoModal').style.display = 'flex';
+    }
+    function closeOrderInfo() {
+        document.getElementById('orderInfoModal').style.display = 'none';
+    }
+    </script>
     <hr style="margin:32px 0;">
     {% endif %}
 {% endif %}
