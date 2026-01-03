@@ -211,6 +211,22 @@ figures = [
     }
     ,
     {
+        "id": "ri-007",
+        "collection_id": "robot-ivan",
+        "title": "Ivan Mechanic",
+        "price": "$230",
+        "status": "available",
+        "status_text": "В наличии",
+        "description": "Механик Иван — мастер на все руки, с инструментами и подвижными деталями. Лимитированная серия.",
+        "size": "23 см",
+        "material": "Металл, пластик",
+        "images": [
+            "/static/images/ivan-mechanic-1.jpg"
+        ],
+        "is_available": True
+    }
+    ,
+    {
         "id": "na-001",
         "collection_id": "neo-automatons",
         "title": "Prototype A1",
