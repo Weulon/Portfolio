@@ -19,7 +19,7 @@ collections = [
     },
     {
         "id": "Pendant",
-        "title": "Брелки",
+        "title": "Brelok",
         "subtitle": "Авторские брелки",
         "image": "/static/images/Brelok/1.jpg",
         "description": "Закажите брелки с индивидуальный дизайном",
@@ -47,7 +47,112 @@ collections = [
 figures = [
     {
         "id": "ri-002",
-        "collection_id": "Брелки",
+        "collection_id": "Brelok",
+        "title": "PD_17",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/9.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_16",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/8.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_15",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/7.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_14",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/6.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_13",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/5.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_12",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/4.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
+        "title": "PD_11",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "Акрил",
+        "images": [
+            "/static/images/Brelok/3.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "Brelok",
         "title": "PD_10",
         "price": "$4",
         "status": "order",
