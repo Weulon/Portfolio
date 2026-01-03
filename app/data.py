@@ -3,7 +3,7 @@
 collections = [
     {
         "id": "robot-ivan",
-        "title": "ML Collection",
+        "title": "ML_Collection",
         "subtitle": "Лимитировання коллекция",
         "image": "/static/images/robot-ivan.jpg",
         "description": "Коллекция уникальных роботизированных фигурок с ограниченным тиражом. Каждая фигурка — результат недель кропотливой работы.",
@@ -47,7 +47,7 @@ collections = [
 figures = [
     {
         "id": "ri-001",
-        "collection_id": "ML Collection",
+        "collection_id": "ML_Collection",
         "title": "Fanny Aspirant",
         "price": "$150",
         "status": "available",
@@ -64,7 +64,7 @@ figures = [
     },
     {
         "id": "ri-002",
-        "collection_id": "ML Collection",
+        "collection_id": "ML_Collection",
         "title": "Аргус",
         "price": "$130",
         "status": "sold",
@@ -81,7 +81,7 @@ figures = [
     },
     {
         "id": "ind-001",
-        "collection_id": "ML Collection",
+        "collection_id": "ML_Collection",
         "title": "Ангела",
         "price": "$170",
         "status": "available",
