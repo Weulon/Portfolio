@@ -1,3 +1,6 @@
+...existing code...
+    )
+
 # Страница курса «Подготовка 3D-модели к печати»
 @app.get("/courses/printing", response_class=HTMLResponse)
 def course_printing_page(request: Request):
