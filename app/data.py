@@ -317,6 +317,13 @@ figures = [
             "button": {
                 "text": "Заказать индивидуальную фигурку",
                 "action": "order_custom_figure"
+            },
+            "reference_figure": {
+                "title": "LM_03",
+                "image": "/static/images/Other/4.jpg",
+                "price": "$220",
+                "size": "19 см",
+                "material": "PLA"
             }
         },
     {
