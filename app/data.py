@@ -300,6 +300,25 @@ figures = [
         ],
         "is_available": True
     },
+        {
+            "id": "LM_featured",
+            "collection_id": "LM_Collection",
+            "title": "Индивидуальная фигурка",
+            "price": "По запросу",
+            "status": "featured",
+            "status_text": "Закрепленный товар",
+            "description": "Закажите уникальную фигурку, созданную специально для вас. Индивидуальный дизайн, размер и материалы по вашему желанию.",
+            "size": "Любой",
+            "material": "PLA, Resin, по запросу",
+            "images": [
+                "/static/images/Other/featured.jpg"
+            ],
+            "is_available": True,
+            "button": {
+                "text": "Заказать индивидуальную фигурку",
+                "action": "order_custom_figure"
+            }
+        },
     {
         "id": "ri-001",
         "collection_id": "ML_Collection",
