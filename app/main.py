@@ -1,3 +1,10 @@
+# Страница курса «Подготовка 3D-модели к печати»
+@app.get("/courses/printing", response_class=HTMLResponse)
+def course_printing_page(request: Request):
+    return templates.TemplateResponse(
+        "course_printing.html",
+        {"request": request},
+    )
 import os
 import sys
 from fastapi import FastAPI, Request
@@ -74,6 +81,14 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 # ======================================================
 # ROUTES
 # ======================================================
+
+# Страница «Обучение»
+@app.get("/courses", response_class=HTMLResponse)
+def courses_page(request: Request):
+    return templates.TemplateResponse(
+        "courses.html",
+        {"request": request},
+    )
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):

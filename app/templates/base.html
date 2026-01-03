@@ -163,6 +163,12 @@
             </div>
             <span class="nav-text">Каталог</span>
         </a>
+        <a href="/courses" class="nav-item {% if request.url.path.startswith('/courses') %}active{% endif %}">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+            </div>
+            <span class="nav-text">Обучение</span>
+        </a>
         <a href="/about" class="nav-item {% if request.url.path == '/about' %}active{% endif %}">
             <div class="nav-icon-wrapper">
                 <span class="nav-icon">👤</span>

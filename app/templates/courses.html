@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Обучение{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Обучение</h1>
+    <h2 class="subtitle">Практические курсы по 3D и анимации от автора</h2>
+    <div class="courses-list">
+        <a href="/courses/printing" class="course-card">
+            <div class="course-title">Подготовка 3D-модели к печати</div>
+            <div class="course-subtitle">От скульпта до физической фигурки</div>
+            <div class="course-status available">Доступен</div>
+        </a>
+        <a href="/courses/animation" class="course-card">
+            <div class="course-title">Мастерство анимации персонажей</div>
+            <div class="course-subtitle">Риг и анимация персонажей (MLBB)</div>
+            <div class="course-status available">Доступен</div>
+        </a>
+    </div>
+</div>
+{% endblock %}
