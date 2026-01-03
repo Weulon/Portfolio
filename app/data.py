@@ -2,7 +2,7 @@
 
 collections = [
     {
-        "id": "robot-ivan",
+        "id": "ML_Collection",
         "title": "ML_Collection",
         "subtitle": "Лимитировання коллекция",
         "image": "/static/images/robot-ivan.jpg",
