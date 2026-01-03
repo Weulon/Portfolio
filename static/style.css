@@ -1,3 +1,63 @@
+/* === Featured Figure (LM_Collection) === */
+.featured-figure {
+    background: linear-gradient(135deg, #1A1A1A 80%, #7C4DFF 100%);
+    border: 2px solid #7C4DFF;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(124,77,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+.featured-figure-image img {
+    box-shadow: 0 2px 16px rgba(124,77,255,0.18);
+    border-radius: 16px;
+    width: 180px;
+    height: auto;
+    background: #fff;
+}
+.featured-figure-content {
+    flex: 1;
+}
+.featured-figure-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7C4DFF;
+    margin-bottom: 12px;
+}
+.featured-figure-content p {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 18px;
+}
+.featured-figure-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #7C4DFF 60%, #2196F3 100%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(124,77,255,0.18);
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+.featured-figure-button:hover {
+    background: linear-gradient(90deg, #2196F3 40%, #7C4DFF 100%);
+    transform: scale(1.06);
+    box-shadow: 0 4px 18px rgba(33,150,243,0.18);
+}
+.featured-figure-button .tg-icon {
+    font-size: 22px;
+    vertical-align: middle;
+}
 .course-status.locked {
     color: #A0A0A0;
     background: rgba(124,77,255,0.08);
