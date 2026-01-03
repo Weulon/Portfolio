@@ -18,11 +18,11 @@ collections = [
         "badge": None
     },
     {
-        "id": "time-portals",
-        "title": "Time Portals",
-        "subtitle": "3D printed",
-        "image": "/static/images/time-portals.jpg",
-        "description": "Футуристические порталы времени, созданные с использованием 3D-печати и светодиодной подсветки.",
+        "id": "Pendant",
+        "title": "Pendrant",
+        "subtitle": "Авторские брелки",
+        "image": "/static/images/Brelok/1.jpg",
+        "description": "Закажите брелки с индивидуальный дизайном",
         "badge": None
     },
     {
@@ -45,6 +45,21 @@ collections = [
 ]
 
 figures = [
+    {
+        "id": "ri-002",
+        "collection_id": "Pendant",
+        "title": "LM_08",
+        "price": "$4",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "5 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Brelok/1.jpg"
+        ],
+        "is_available": True
+    },
     {
         "id": "ri-002",
         "collection_id": "LM_Collection",
