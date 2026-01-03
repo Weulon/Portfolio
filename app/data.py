@@ -48,11 +48,116 @@ figures = [
     {
         "id": "ri-002",
         "collection_id": "LM_Collection",
+        "title": "LM_08",
+        "price": "$240",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "20 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/9.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_07",
+        "price": "$265",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "22 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/8.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_06",
+        "price": "$260",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "21 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/7.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_05",
+        "price": "$180",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "18 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/6.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_04",
+        "price": "$230",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "22 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/5.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_03",
+        "price": "$220",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "19 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/4.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_02",
+        "price": "$230",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Order Collection",
+        "size": "17 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/3.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
         "title": "LM_01",
         "price": "$250",
         "status": "order",
         "status_text": "На заказ",
-        "description": "MLBB Collection",
+        "description": "Order Collection",
         "size": "17 см",
         "material": "PLA",
         "images": [
