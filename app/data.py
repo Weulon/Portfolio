@@ -10,11 +10,11 @@ collections = [
         "badge": "NEW"
     },
     {
-        "id": "industrial",
-        "title": "Industrial",
-        "subtitle": "Handcrafted",
-        "image": "/static/images/industrial.jpg",
-        "description": "Фигурки в индустриальном стиле, созданные вручную с использованием металлических элементов и патины.",
+        "id": "LM_Collection",
+        "title": "LM_Collection",
+        "subtitle": "Индивидуальная коллекция",
+        "image": "/static/images/Other/2.jpg",
+        "description": "Фигурки были выполнены по индивидуальному заказу на 3D печать",
         "badge": None
     },
     {
@@ -45,6 +45,21 @@ collections = [
 ]
 
 figures = [
+    {
+        "id": "ri-002",
+        "collection_id": "LM_Collection",
+        "title": "LM_01",
+        "price": "$250",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "MLBB Collection",
+        "size": "17 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Other/2.jpg"
+        ],
+        "is_available": True
+    },
     {
         "id": "ri-001",
         "collection_id": "ML_Collection",
@@ -78,7 +93,7 @@ figures = [
             "/static/images/argus-3.jpg"
             
         ],
-        "is_available": False
+        "is_available": True
     },
     {
         "id": "ind-001",

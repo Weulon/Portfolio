@@ -1,3 +1,21 @@
+.course-status.locked {
+    color: #A0A0A0;
+    background: rgba(124,77,255,0.08);
+    font-weight: 500;
+    font-size: 14px;
+}
+.course-locked {
+    position: relative;
+}
+.course-locked::after {
+    content: "🔒";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 22px;
+    color: #7C4DFF;
+    opacity: 0.7;
+}
 /* =========================
      КУРСЫ и КАРТОЧКИ КУРСОВ
      ========================= */
