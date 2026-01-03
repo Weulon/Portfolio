@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Каталог фигурок</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Шрифт для красивого текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для новой нижней навигации */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1A1A1A;
+            border-top: 1px solid #2A2A2A;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .nav-item:hover {
+            background: rgba(124, 77, 255, 0.1);
+        }
+
+        .nav-item.active {
+            background: rgba(124, 77, 255, 0.15);
+            border: 1px solid rgba(124, 77, 255, 0.3);
+        }
+
+        .nav-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+            background: #242424;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-icon-wrapper {
+            background: linear-gradient(135deg, #7C4DFF 0%, #9C7BFF 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
+        }
+
+        .nav-icon {
+            font-size: 20px;
+            color: #A0A0A0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-icon {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .nav-text {
+            font-size: 12px;
+            font-weight: 500;
+            color: #A0A0A0;
+            transition: all 0.3s ease;
+            margin-top: 2px;
+        }
+
+        .nav-item.active .nav-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Анимация для активного состояния */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .nav-item.active .nav-icon-wrapper {
+            animation: pulse 2s infinite;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 480px) {
+            .bottom-nav {
+                padding: 10px 0;
+            }
+
+            .nav-icon-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-icon {
+                font-size: 18px;
+            }
+
+            .nav-text {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .nav-text {
+                font-size: 10px;
+            }
+        }
+        
+        /* Добавляем отступ снизу для основного контента, чтобы не перекрывался меню */
+        .container {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+<header class="header collection-header">
+    <h1>ML_Collection</h1>
+    <p class="subtitle">Лимитировання коллекция</p>
+</header>
+
+
+        <main class="main-content">
+            
+<div class="back-wrapper">
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i> Назад
+    </a>
+</div>
+<div class="collection-description">
+    <p>Коллекция уникальных роботизированных фигурок с ограниченным тиражом. Каждая фигурка — результат недель кропотливой работы.</p>
+</div>
+
+
+
+
+<div class="figures-list">
+    
+        
+        <a href="/figure/ri-001" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/fanny-1.jpg" alt="Fanny Aspirant" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=Fanny%20Aspirant'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Fanny Aspirant</h3>
+                <div class="figure-item-price">$180</div>
+                <div class="figure-item-meta">
+                    <span class="status status-available">В наличии</span>
+                    <span class="figure-item-size">17 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/ri-002" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/argus-1.jpg" alt="Аргус" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%90%D1%80%D0%B3%D1%83%D1%81'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Аргус</h3>
+                <div class="figure-item-price">$160</div>
+                <div class="figure-item-meta">
+                    <span class="status status-order">На заказ</span>
+                    <span class="figure-item-size">17 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/ind-001" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/angela-1.jpg" alt="Ангела" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%90%D0%BD%D0%B3%D0%B5%D0%BB%D0%B0'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Ангела</h3>
+                <div class="figure-item-price">$170</div>
+                <div class="figure-item-meta">
+                    <span class="status status-sold">Продано</span>
+                    <span class="figure-item-size">18 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/tp-001" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/mia-1.png" alt="Мия" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%9C%D0%B8%D1%8F'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Мия</h3>
+                <div class="figure-item-price">$180</div>
+                <div class="figure-item-meta">
+                    <span class="status status-order">На заказ</span>
+                    <span class="figure-item-size">18 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/tp-002" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/barts-1.jpg" alt="Бартс" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%91%D0%B0%D1%80%D1%82%D1%81'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Бартс</h3>
+                <div class="figure-item-price">$80</div>
+                <div class="figure-item-meta">
+                    <span class="status status-sold">Продано</span>
+                    <span class="figure-item-size">17 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/sea-001" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/xborg-1.jpg" alt="X-Borg" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=X-Borg'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">X-Borg</h3>
+                <div class="figure-item-price">$130</div>
+                <div class="figure-item-meta">
+                    <span class="status status-sold">Продано</span>
+                    <span class="figure-item-size">18 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/ri-003" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/diggie-1.jpg" alt="Diggie" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=Diggie'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Diggie</h3>
+                <div class="figure-item-price">$130</div>
+                <div class="figure-item-meta">
+                    <span class="status status-order">На заказ</span>
+                    <span class="figure-item-size">19 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/ri-004" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/lilia-1.jpg" alt="Лилия" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%9B%D0%B8%D0%BB%D0%B8%D1%8F'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Лилия</h3>
+                <div class="figure-item-price">$215</div>
+                <div class="figure-item-meta">
+                    <span class="status status-sold">Продано</span>
+                    <span class="figure-item-size">23 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+        
+        <a href="/figure/ri-005" class="figure-item">
+            <div class="figure-item-image">
+                <img src="/static/images/grandger-1.jpg" alt="Грейнджер" onerror="this.src='https://via.placeholder.com/100x100/1A1A1A/7C4DFF?text=%D0%93%D1%80%D0%B5%D0%B9%D0%BD%D0%B4%D0%B6%D0%B5%D1%80'">
+            </div>
+            <div class="figure-item-content">
+                <h3 class="figure-item-title">Грейнджер</h3>
+                <div class="figure-item-price">$199</div>
+                <div class="figure-item-meta">
+                    <span class="status status-order">На заказ</span>
+                    <span class="figure-item-size">21 см</span>
+                </div>
+            </div>
+        </a>
+        
+    
+</div>
+
+        </main>
+    </div>
+
+    <!-- Нижнее меню -->
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item ">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">🏠</span>
+            </div>
+            <span class="nav-text">Главная</span>
+        </a>
+        <a href="/collection" class="nav-item active">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">🛍</span>
+            </div>
+            <span class="nav-text">Каталог</span>
+        </a>
+        <a href="/courses" class="nav-item ">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+            </div>
+            <span class="nav-text">Обучение</span>
+        </a>
+        <a href="/about" class="nav-item ">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">👤</span>
+            </div>
+            <span class="nav-text">О проекте</span>
+        </a>
+    </nav>
+
+    <script>
+        // Инициализация Telegram WebApp
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+
+        // Плавная загрузка
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.profile-animate').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Определяем активную страницу при загрузке
+            const currentPath = window.location.pathname;
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (currentPath === href || 
+                    (href.includes('/collection') && currentPath.includes('/collection'))) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
