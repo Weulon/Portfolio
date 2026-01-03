@@ -3,8 +3,8 @@
 collections = [
     {
         "id": "robot-ivan",
-        "title": "Robot Ivan",
-        "subtitle": "Limited figures",
+        "title": "ML Collection",
+        "subtitle": "Лимитировання коллекция",
         "image": "/static/images/robot-ivan.jpg",
         "description": "Коллекция уникальных роботизированных фигурок с ограниченным тиражом. Каждая фигурка — результат недель кропотливой работы.",
         "badge": "NEW"
@@ -47,7 +47,7 @@ collections = [
 figures = [
     {
         "id": "ri-001",
-        "collection_id": "robot-ivan",
+        "collection_id": "ML Collection",
         "title": "Fanny Aspirant",
         "price": "$150",
         "status": "available",
@@ -64,33 +64,33 @@ figures = [
     },
     {
         "id": "ri-002",
-        "collection_id": "robot-ivan",
-        "title": "Флорин",
-        "price": "$210",
+        "collection_id": "ML Collection",
+        "title": "Аргус",
+        "price": "$130",
         "status": "sold",
         "status_text": "Продано",
         "description": "Исследователь космоса с детализированным оборудованием и картой звёздного неба на спине.",
-        "size": "22 см",
-        "material": "Металл, смола, люминесцентная краска",
+        "size": "17 см",
+        "material": "PLA",
         "images": [
-            "/static/images/explorer-1.jpg",
-            "/static/images/explorer-2.jpg"
+            "/static/images/argus-1.jpg",
+            "/static/images/argus-2.jpg",
+            
         ],
         "is_available": False
     },
     {
         "id": "ind-001",
-        "collection_id": "industrial",
-        "title": "Steam Mechanic",
-        "price": "$180",
+        "collection_id": "ML Collection",
+        "title": "Ангела",
+        "price": "$170",
         "status": "available",
-        "status_text": "В наличии",
-        "description": "Механик парового века с работающими шестерёнками и паровыми трубками. Все элементы подвижны.",
-        "size": "20 см",
-        "material": "Латунь, медь, дерево",
+        "status_text": "Продано",
+        "description": "MLBB Collection",
+        "size": "18 см",
+        "material": "PLA",
         "images": [
-            "/static/images/mechanic-1.jpg",
-            "/static/images/mechanic-2.jpg"
+            "/static/images/angela-1.jpg"
         ],
         "is_available": True
     },
