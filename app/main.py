@@ -1,9 +1,4 @@
-import os
-import sys
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
+
 import os
 import sys
 from fastapi import FastAPI, Request
@@ -11,47 +6,27 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-# Получаем директорию текущего файла (app/) и добавляем в sys.path
 APP_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, APP_DIR_PATH)
 app = FastAPI()
-templates = Jinja2Templates(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
-# Страница курса «Подготовка 3D-модели к печати»
-@app.get("/courses/printing", response_class=HTMLResponse)
-def course_printing_page(request: Request):
-    return templates.TemplateResponse(
-        "course_printing.html",
-        {"request": request},
-    )
+TEMPLATES_DIR = os.path.join(APP_DIR_PATH, "templates")
+STATIC_DIR = os.path.join(os.path.dirname(APP_DIR_PATH), "static")
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 # Импортируем ВСЕ нужные данные из data.py
 try:
     from data import collections, figures
-    # Проверяем, есть ли about_text в data.py
     from data import about_text
 except ImportError as e:
     print(f"Ошибка импорта из data.py: {e}")
-    # Создаем пустые структуры для теста
     collections = []
     figures = []
     about_text = "# О проекте\n\nИнформация о проекте появится здесь в ближайшее время."
 
-# ======================================================
-# БАЗОВЫЕ ПУТИ (работает из любой точки запуска)
-# ======================================================
 
-CURRENT_FILE = os.path.abspath(__file__)
-APP_DIR = os.path.dirname(CURRENT_FILE)
-BASE_DIR = os.path.dirname(APP_DIR)
 
-TEMPLATES_DIR = os.path.join(APP_DIR, "templates")
-STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-# ======================================================
-# APP
-# ======================================================
 
-app = FastAPI()
 
 
 @app.get("/health")
@@ -78,17 +53,27 @@ def debug_collections():
         "collections": collections[:2] if collections else "empty"
     }
 
+
 app.mount(
     "/static",
     StaticFiles(directory=STATIC_DIR),
     name="static",
 )
 
-templates = Jinja2Templates(directory=TEMPLATES_DIR)
+
+
 
 # ======================================================
 # ROUTES
 # ======================================================
+
+# Страница курса «Подготовка 3D-модели к печати»
+@app.get("/courses/printing", response_class=HTMLResponse)
+def course_printing_page(request: Request):
+    return templates.TemplateResponse(
+        "course_printing.html",
+        {"request": request},
+    )
 
 # Страница «Обучение»
 @app.get("/courses", response_class=HTMLResponse)
