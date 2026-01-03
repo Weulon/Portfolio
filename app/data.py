@@ -46,7 +46,7 @@ collections = [
 
 figures = [
     {
-        "id": "ri-002",
+        "id": "pd-017",
         "collection_id": "Brelok",
         "title": "PD_17",
         "price": "$4",
@@ -61,7 +61,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-016",
         "collection_id": "Brelok",
         "title": "PD_16",
         "price": "$4",
@@ -76,7 +76,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-015",
         "collection_id": "Brelok",
         "title": "PD_15",
         "price": "$4",
@@ -91,7 +91,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-014",
         "collection_id": "Brelok",
         "title": "PD_14",
         "price": "$4",
@@ -106,7 +106,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-013",
         "collection_id": "Brelok",
         "title": "PD_13",
         "price": "$4",
@@ -121,7 +121,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-012",
         "collection_id": "Brelok",
         "title": "PD_12",
         "price": "$4",
@@ -136,7 +136,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-011",
         "collection_id": "Brelok",
         "title": "PD_11",
         "price": "$4",
@@ -151,7 +151,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-010",
         "collection_id": "Brelok",
         "title": "PD_10",
         "price": "$4",
@@ -166,7 +166,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "pd-009",
         "collection_id": "Брелки",
         "title": "PD_09",
         "price": "$4",
@@ -181,7 +181,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-008",
         "collection_id": "LM_Collection",
         "title": "LM_08",
         "price": "$240",
@@ -196,7 +196,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-007",
         "collection_id": "LM_Collection",
         "title": "LM_07",
         "price": "$265",
@@ -211,7 +211,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-006",
         "collection_id": "LM_Collection",
         "title": "LM_06",
         "price": "$260",
@@ -226,7 +226,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-005",
         "collection_id": "LM_Collection",
         "title": "LM_05",
         "price": "$180",
@@ -241,7 +241,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-004",
         "collection_id": "LM_Collection",
         "title": "LM_04",
         "price": "$230",
@@ -256,7 +256,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-003",
         "collection_id": "LM_Collection",
         "title": "LM_03",
         "price": "$220",
@@ -271,7 +271,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-002",
         "collection_id": "LM_Collection",
         "title": "LM_02",
         "price": "$230",
@@ -286,7 +286,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "lm-001",
         "collection_id": "LM_Collection",
         "title": "LM_01",
         "price": "$250",
@@ -344,7 +344,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-002",
+        "id": "argus-ml",
         "collection_id": "ML_Collection",
         "title": "Аргус",
         "price": "$160",
