@@ -13,3 +13,6 @@ WEBAPP_URL = "https://authorless-theo-apogeotropic.ngrok-free.dev"
 DEBUG = True
 HOST = "0.0.0.0"
 PORT = 8000
+
+TEMPLATES_DIR = BASE_DIR / "app" / "templates"
+DOCS_DIR = BASE_DIR / "docs"
