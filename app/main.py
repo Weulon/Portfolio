@@ -65,6 +65,18 @@ app.mount(
 
 # ======================================================
 # ROUTES
+
+# Каталог без выбора коллекции — показать все коллекции и все фигурки
+@app.get("/collection", response_class=HTMLResponse)
+def all_collections_page(request: Request):
+    return templates.TemplateResponse(
+        "collection.html",
+        {
+            "request": request,
+            "collection": {"title": "Все коллекции", "subtitle": "Все фигурки из всех коллекций", "description": "Здесь собраны все фигурки из всех коллекций."},
+            "figures": figures,
+        },
+    )
 # ======================================================
 
 # Страница курса «Подготовка 3D-модели к печати»
