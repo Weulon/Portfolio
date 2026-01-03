@@ -174,7 +174,7 @@ figures = [
     {
         "id": "ri-005",
         "collection_id": "ML_Collection",
-        "title": "Grander,
+        "title": "Грейнджер",
         "price": "$199",
         "status": "available",
         "status_text": "Под заказ",
