@@ -66,6 +66,14 @@ app.mount(
 # ======================================================
 # ROUTES
 
+# Страница курса «Мастерство анимации персонажей»
+@app.get("/courses/animation", response_class=HTMLResponse)
+def course_animation_page(request: Request):
+    return templates.TemplateResponse(
+        "course_animation.html",
+        {"request": request},
+    )
+
 # Каталог без выбора коллекции — показать все коллекции и все фигурки
 @app.get("/collection", response_class=HTMLResponse)
 def all_collections_page(request: Request):

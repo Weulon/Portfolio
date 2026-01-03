@@ -115,7 +115,7 @@ figures = [
         "collection_id": "ML_Collection",
         "title": "Бартс",
         "price": "$80",
-        "status": "Sold",
+        "status": "sold",
         "status_text": "Продано",
         "description": "MLBB Collection",
         "size": "17 см",
