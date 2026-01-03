@@ -207,7 +207,7 @@
     transform: translateX(5px);
 }
 
-/* Модальное окно */
+/* Модальное окно - ФИКСИРОВАННОЕ ДЛЯ СВАЙПОВ */
 .order-modal-overlay {
     display: none;
     position: fixed;
@@ -222,6 +222,7 @@
     justify-content: center;
     padding: 20px;
     animation: fadeIn 0.3s ease;
+    overflow: hidden; /* Убираем скролл у оверлея */
 }
 
 @keyframes fadeIn {
@@ -239,6 +240,9 @@
     overflow: hidden;
     border: 1px solid rgba(255, 107, 53, 0.3);
     animation: slideUp 0.4s ease;
+    max-height: 85vh; /* Ограничиваем высоту */
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -274,6 +278,7 @@
     padding: 40px 40px 20px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Запрещаем сжиматься хедеру */
 }
 
 .modal-icon {
@@ -297,10 +302,42 @@
 .modal-subtitle {
     opacity: 0.8;
     font-size: 0.95em;
+    margin-bottom: 5px;
 }
 
-.modal-content {
+.brand-name {
+    font-size: 0.9em;
+    color: #aaa;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* КОНТЕНТ С ПРОКРУТКОЙ */
+.modal-content-scrollable {
     padding: 30px 40px;
+    flex: 1; /* Занимает все доступное пространство */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    max-height: calc(85vh - 200px); /* Ограничиваем высоту для прокрутки */
+    -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+}
+
+/* Стили для скроллбара */
+.modal-content-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content-scrollable::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.modal-content-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 53, 0.5);
+    border-radius: 10px;
+}
+
+.modal-content-scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 53, 0.8);
 }
 
 .info-highlight {
@@ -356,8 +393,11 @@
 }
 
 .modal-footer {
-    padding: 0 40px 40px;
+    padding: 20px 40px 30px;
     text-align: center;
+    flex-shrink: 0; /* Запрещаем сжиматься футеру */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .telegram-btn {
@@ -397,12 +437,24 @@
     .order-modal-container {
         margin: 20px;
         max-width: calc(100% - 40px);
+        max-height: 90vh; /* На мобильных больше высота */
     }
     
-    .modal-header,
-    .modal-content,
+    .modal-header {
+        padding: 30px 20px 15px;
+    }
+    
+    .modal-content-scrollable {
+        padding: 20px;
+        max-height: calc(90vh - 200px);
+    }
+    
     .modal-footer {
-        padding: 25px 20px;
+        padding: 15px 20px 20px;
+    }
+    
+    .modal-title {
+        font-size: 1.5em;
     }
     
     .custom-order-btn {
@@ -420,6 +472,37 @@
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+    
+    .feature-item {
+        font-size: 0.9em;
+    }
+    
+    .modal-content-scrollable {
+        max-height: calc(90vh - 180px);
+    }
+}
+
+/* Дополнительные стили для удобства свайпов */
+@media (hover: none) and (pointer: coarse) {
+    /* Для тач-устройств */
+    .modal-close-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.8em;
+    }
+    
+    .feature-item {
+        padding: 8px 0;
+    }
+    
+    .telegram-btn {
+        padding: 18px 24px;
+    }
+    
+    /* Увеличиваем область для скролла */
+    .modal-content-scrollable {
+        padding-bottom: 40px;
     }
 }
 </style>
@@ -443,46 +526,46 @@
         <div class="modal-header">
             <div class="modal-icon">✨</div>
             <h3 class="modal-title">Индивидуальный заказ</h3>
-            <p class="modal-subtitle">Создайте уникальную фигурку по вашей идее</p>
+            <p class="modal-subtitle">МИНИ-ПРИЛОЖЕНИЕ</p>
+            <p class="brand-name">Neko_3D</p>
         </div>
         
-        <div class="modal-content">
+        <!-- СКРОЛЛИРУЕМАЯ ОБЛАСТЬ -->
+        <div class="modal-content-scrollable">
             <div class="info-highlight">
                 <p>Вы можете заказать уникальную 3D-фигурку по вашей идее или эскизу — для коллекции, подарка или личного проекта.</p>
             </div>
             
             <div class="features-list">
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Вам не нужен готовый 3D-файл — достаточно идеи, референсов или описания</span>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Я помогаю доработать концепт и подсказываю, как лучше реализовать фигурку</span>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Перед печатью вы увидите 3D-превью и сможете внести правки</span>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Модель изначально готовится с учётом 3D-печати (геометрия, толщина, устойчивость)</span>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Стоимость зависит от сложности модели, размера и уровня детализации</span>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-check">✓</span>
+                    <span class="feature-check">✔</span>
                     <span>Сроки обсуждаются заранее и соблюдаются</span>
                 </div>
             </div>
             
             <div class="important-note">
                 <div class="note-icon">💭</div>
-                <p>Я беру на себя весь технический процесс — от скульпта до готовой модели для печати.<br>
-                Если у вас есть идея, но вы не знаете, как её реализовать — это нормально.<br>
-                Просто напишите, мы всё обсудим.</p>
+                <p>Я беру на себя весь технический процесс — от скульпта до готовой модели для печати. Если у вас есть идея, но вы не знаете, как ее реализовать — это нормально. Просто напишите, мы всё обсудим.</p>
             </div>
         </div>
         
@@ -499,13 +582,18 @@
 function openOrderInfo() {
     const modal = document.getElementById('orderInfoModal');
     modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+    
+    // Добавляем класс для анимации
+    setTimeout(() => {
+        modal.querySelector('.order-modal-container').classList.add('modal-slide-in');
+    }, 10);
 }
 
 function closeOrderInfo() {
     const modal = document.getElementById('orderInfoModal');
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // Возвращаем скролл страницы
 }
 
 // Закрытие модального окна при клике на оверлей
@@ -520,6 +608,11 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeOrderInfo();
     }
+});
+
+// Предотвращаем закрытие при клике внутри модального окна
+document.querySelector('.order-modal-container').addEventListener('click', function(e) {
+    e.stopPropagation();
 });
 </script>
 
