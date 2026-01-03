@@ -1,6 +1,10 @@
+import os
+import sys
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 ...existing code...
-    )
-
 # Страница курса «Подготовка 3D-модели к печати»
 @app.get("/courses/printing", response_class=HTMLResponse)
 def course_printing_page(request: Request):
