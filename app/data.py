@@ -69,12 +69,13 @@ figures = [
         "price": "$130",
         "status": "sold",
         "status_text": "Продано",
-        "description": "Исследователь космоса с детализированным оборудованием и картой звёздного неба на спине.",
+        "description": "MLBB Collection",
         "size": "17 см",
         "material": "PLA",
         "images": [
             "/static/images/argus-1.jpg",
             "/static/images/argus-2.jpg",
+            "/static/images/argus-3.jpg"
             
         ],
         "is_available": False
@@ -96,100 +97,92 @@ figures = [
     },
     {
         "id": "tp-001",
-        "collection_id": "time-portals",
-        "title": "Portal Keeper",
-        "price": "$320",
+        "collection_id": "ML_Collection",
+        "title": "Мия",
+        "price": "$180",
         "status": "order",
         "status_text": "На заказ",
-        "description": "Хранитель временного портала с программируемой RGB-подсветкой. Изменяет цвет в зависимости от настроения.",
-        "size": "30 см",
-        "material": "Смола, акрил, электроника",
+        "description": "MLBB Collection",
+        "size": "18 см",
+        "material": "PLA",
         "images": [
-            "/static/images/portal-1.jpg",
-            "/static/images/portal-2.jpg",
-            "/static/images/portal-3.jpg",
-            "/static/images/portal-4.jpg"
+            "/static/images/mia-1.jpg"
         ],
         "is_available": True
     },
     {
         "id": "tp-002",
-        "collection_id": "time-portals",
-        "title": "Chrono Sphere",
-        "price": "$280",
+        "collection_id": "ML_Collection",
+        "title": "Бартс",
+        "price": "$80",
         "status": "available",
         "status_text": "В наличии",
-        "description": "Сфера времени с плавающими элементами внутри. Создаёт гипнотический эффект при вращении.",
-        "size": "18 см диаметр",
-        "material": "Стекло, металл, магнитная жидкость",
+        "description": "MLBB Collection",
+        "size": "17 см",
+        "material": "PLA",
         "images": [
-            "/static/images/sphere-1.jpg",
-            "/static/images/sphere-2.jpg"
+            "/static/images/barts-1.jpg"
         ],
         "is_available": True
     },
     {
         "id": "sea-001",
-        "collection_id": "seasonal",
-        "title": "Winter Guardian",
-        "price": "$190",
+        "collection_id": "ML_Collection",
+        "title": "X-Borg",
+        "price": "$130",
         "status": "sold",
         "status_text": "Продано",
-        "description": "Снежный страж с мерцающими кристаллами и инеевым покрытием. Создан к зимнему солнцестоянию.",
-        "size": "21 см",
-        "material": "Хрусталь, серебро, светодиоды",
+        "description": "MLBB Collection",
+        "size": "18 см",
+        "material": "PLA",
         "images": [
-            "/static/images/winter-1.jpg",
-            "/static/images/winter-2.jpg"
+            "/static/images/xborg-1.jpg"
         ],
         "is_available": False
     },
     {
         "id": "ri-003",
-        "collection_id": "robot-ivan",
-        "title": "Ivan Sentinel",
-        "price": "$230",
+        "collection_id": "ML_Collection",
+        "title": "Diggie",
+        "price": "$130",
         "status": "available",
-        "status_text": "В наличии",
-        "description": "Страж роботов с усиленной бронёй и светящимися глазами. Ограниченная серия.",
-        "size": "24 см",
-        "material": "Металл, смола, светодиоды",
+        "status_text": "Под заказ",
+        "description": "MLBB Collection",
+        "size": "19 см",
+        "material": "PLA",
         "images": [
-            "/static/images/ivan-4.jpg",
-            "/static/images/ivan-5.jpg"
+            "/static/images/diggie-1.jpg"
         ],
         "is_available": True
     }
     ,
     {
         "id": "ri-004",
-        "collection_id": "robot-ivan",
-        "title": "Ivan Engineer",
+        "collection_id": "ML_Collection",
+        "title": "Лилия",
         "price": "$215",
         "status": "available",
-        "status_text": "В наличии",
-        "description": "Инженер-робот с инструментами и модульной платформой для апгрейда.",
+        "status_text": "Продано",
+        "description": "MLBB Collection",
         "size": "23 см",
-        "material": "Металл, пластик, латунь",
+        "material": "PLA",
         "images": [
-            "/static/images/ivan-2.jpg",
-            "/static/images/mechanic-1.jpg"
+            "/static/images/lilia-1.jpg"
         ],
         "is_available": True
     },
     {
         "id": "ri-005",
-        "collection_id": "robot-ivan",
-        "title": "Ivan Scout",
+        "collection_id": "ML_Collection",
+        "title": "Grander,
         "price": "$199",
         "status": "available",
-        "status_text": "В наличии",
-        "description": "Разведчик с сенсорным блоком и скрытыми колёсами для быстрого перемещения.",
+        "status_text": "Под заказ",
+        "description": "MLBB Collection",
         "size": "21 см",
-        "material": "Пластик, металл, резина",
+        "material": "PLA",
         "images": [
-            "/static/images/explorer-2.jpg",
-            "/static/images/ivan-1.jpg"
+            "/static/images/granger-1.jpg"
         ],
         "is_available": True
     },
