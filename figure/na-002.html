@@ -52,19 +52,19 @@
 
         /* Специальный стиль для кнопки генератора 3D */
         .nav-item.generator {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(124, 77, 255, 0.15) 100%);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            animation: pulse-orange 3s infinite;
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.15) 0%, rgba(0, 150, 136, 0.15) 100%);
+            border: 1px solid rgba(0, 200, 83, 0.3);
+            animation: pulse-green 3s infinite;
         }
 
         .nav-item.generator:hover {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.25) 0%, rgba(124, 77, 255, 0.25) 100%);
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.25) 0%, rgba(0, 150, 136, 0.25) 100%);
             transform: translateY(-2px);
         }
 
-        @keyframes pulse-orange {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
-            50% { box-shadow: 0 0 0 6px rgba(255, 107, 53, 0); }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(0, 200, 83, 0); }
         }
 
         .nav-icon-wrapper {
@@ -87,8 +87,8 @@
 
         /* Специальный стиль для иконки генератора */
         .nav-item.generator .nav-icon-wrapper {
-            background: linear-gradient(135deg, #ff6b35 0%, #7c4dff 100%);
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, #00c853 0%, #009688 100%);
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
         }
 
         .nav-item.generator .nav-icon-wrapper::after {
@@ -99,7 +99,7 @@
             right: -2px;
             bottom: -2px;
             border-radius: 14px;
-            background: linear-gradient(135deg, #ff6b35, #7c4dff);
+            background: linear-gradient(135deg, #00c853, #00e676);
             z-index: -1;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -147,38 +147,8 @@
         }
 
         .nav-item.generator .nav-text {
-            color: #ff9e6d;
+            color: #4caf50;
             font-weight: 600;
-        }
-
-        /* Бейдж для новых функций */
-        .badge-new {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: linear-gradient(135deg, #ff6b35, #7c4dff);
-            color: white;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-weight: 600;
-            animation: badge-pulse 2s infinite;
-        }
-
-        @keyframes badge-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* Анимация для активного состояния */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .nav-item.active .nav-icon-wrapper {
-            animation: pulse 2s infinite;
         }
 
         /* Стили для модального окна генератора 3D */
@@ -198,27 +168,149 @@
             animation: fadeIn 0.3s ease;
         }
 
+        .generator-modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            max-width: 450px;
+            width: 100%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 200, 83, 0.3);
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 200, 83, 0.2);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        .generator-modal-content {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255, 107, 53, 0.3);
-            animation: slideUp 0.4s ease;
-            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
-        }
-
         @keyframes slideUp {
             from { transform: translateY(40px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+        .generator-header {
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .generator-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00c853, #00e676);
+            border-radius: 2px;
+        }
+
+        .generator-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .generator-title {
+            font-size: 1.8em;
+            color: #4caf50;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .generator-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+        }
+
+        .generator-content {
+            padding: 25px 30px;
+        }
+
+        .generator-description {
+            background: rgba(0, 200, 83, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid #00c853;
+        }
+
+        .generator-description p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .generator-features {
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .feature-icon {
+            color: #00e676;
+            font-size: 1.2em;
+        }
+
+        .generator-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .generator-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .generator-btn.primary {
+            background: linear-gradient(135deg, #00c853 0%, #009688 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+        }
+
+        .generator-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+            gap: 16px;
+        }
+
+        .generator-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .generator-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
         .modal-close {
@@ -241,316 +333,38 @@
         }
 
         .modal-close:hover {
-            background: rgba(255, 107, 53, 0.3);
+            background: rgba(0, 200, 83, 0.3);
             transform: rotate(90deg);
         }
 
-        /* Заголовок генератора */
-        .generator-header {
-            padding: 30px 30px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .generator-header::after {
-            content: '';
+        /* Бейдж для новых функций */
+        .badge-new {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b35, #7c4dff);
-            border-radius: 2px;
-        }
-
-        .generator-icon-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .generator-icon {
-            font-size: 3em;
-            display: block;
-            animation: float 3s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .vpn-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            top: -5px;
+            right: -5px;
+            background: linear-gradient(135deg, #00c853, #00e676);
             color: white;
             font-size: 10px;
-            padding: 4px 10px;
-            border-radius: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
             font-weight: 600;
             animation: badge-pulse 2s infinite;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            z-index: 1;
         }
 
-        .generator-title {
-            font-size: 1.8em;
-            color: #ff9e6d;
-            margin-bottom: 8px;
-            font-weight: 700;
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        .generator-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95em;
+        /* Анимация для активного состояния */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        /* Основной контент */
-        .generator-content {
-            padding: 25px 30px;
-        }
-
-        /* Предупреждение о VPN */
-        .vpn-warning {
-            background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(255, 193, 7, 0.1));
-            border: 1px solid rgba(255, 152, 0, 0.3);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .warning-icon {
-            color: #ff9800;
-            font-size: 1.5em;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .warning-content h4 {
-            color: #ff9800;
-            margin: 0 0 8px 0;
-            font-size: 1em;
-        }
-
-        .warning-content p {
-            margin: 0;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-        }
-
-        /* Описание генератора */
-        .generator-description {
-            background: rgba(255, 107, 53, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #ff6b35;
-        }
-
-        .generator-description p {
-            margin: 0;
-            line-height: 1.6;
-            font-size: 0.95em;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Особенности в сетке */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 18px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 107, 53, 0.3);
-        }
-
-        .feature-card-icon {
-            color: #ff9e6d;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .feature-card h4 {
-            color: white;
-            margin: 0 0 8px 0;
-            font-size: 0.95em;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            margin: 0;
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.4;
-        }
-
-        /* Информация о сервисе */
-        .generator-info {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            padding: 15px;
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .info-item i {
-            color: #ff9e6d;
-            width: 20px;
-            text-align: center;
-        }
-
-        .info-item strong {
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Кнопки действий */
-        .generator-actions {
-            margin-top: 25px;
-        }
-
-        .action-main {
-            margin-bottom: 15px;
-        }
-
-        .generator-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 18px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1em;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .generator-btn.primary {
-            background: linear-gradient(135deg, #ff6b35 0%, #7c4dff 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .generator-btn.primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-            gap: 16px;
-        }
-
-        .btn-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-        }
-
-        .btn-icon {
-            font-size: 1.2em;
-        }
-
-        .btn-text {
-            flex: 1;
-            text-align: left;
-        }
-
-        .btn-title {
-            display: block;
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .btn-subtitle {
-            display: block;
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .btn-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .generator-btn.primary:hover .btn-arrow {
-            transform: translateX(5px);
-        }
-
-        .action-secondary {
-            display: flex;
-            gap: 10px;
-        }
-
-        .generator-btn.outline {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            flex: 1;
-        }
-
-        .generator-btn.link {
-            background: transparent;
-            border: none;
-            color: #4fc3f7;
-            text-decoration: underline;
-            padding: 12px;
-            font-size: 0.9em;
-            justify-content: flex-start;
-        }
-
-        /* Полезная заметка */
-        .generator-note {
-            background: rgba(255, 152, 0, 0.1);
-            border-radius: 10px;
-            padding: 12px 15px;
-            margin-top: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .generator-note i {
-            color: #ff9800;
-            margin-top: 2px;
+        .nav-item.active .nav-icon-wrapper {
+            animation: pulse 2s infinite;
         }
 
         /* Адаптивность */
@@ -583,32 +397,6 @@
 
             .generator-content {
                 padding: 20px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .action-secondary {
-                flex-direction: column;
-            }
-
-            .generator-btn.outline,
-            .generator-btn.link {
-                width: 100%;
-            }
-
-            .btn-content {
-                gap: 10px;
-            }
-
-            .btn-title {
-                font-size: 1em;
-            }
-
-            .btn-subtitle {
-                font-size: 0.8em;
             }
         }
 
@@ -1185,122 +973,58 @@
     <!-- Модальное окно генератора 3D -->
     <div id="generatorModal" class="generator-modal">
         <div class="generator-modal-content">
-            <button class="modal-close" onclick="closeGeneratorModal()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="modal-close" onclick="closeGeneratorModal()">×</button>
             
             <div class="generator-header">
-                <div class="generator-icon-wrapper">
-                    <div class="generator-icon">🤖</div>
-                    <div class="vpn-badge" title="Требуется VPN для доступа">
-                        <i class="fas fa-shield-alt"></i>
-                        VPN
-                    </div>
-                </div>
-                <h2 class="generator-title">AI Генератор 3D Моделей</h2>
-                <p class="generator-subtitle">Создание 3D из текста и изображений</p>
+                <div class="generator-icon">⚡</div>
+                <h2 class="generator-title">Stable Fast 3D</h2>
+                <p class="generator-subtitle">Молниеносная генерация 3D моделей</p>
             </div>
             
             <div class="generator-content">
-                <!-- Важное предупреждение о VPN -->
-                <div class="vpn-warning">
-                    <div class="warning-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="warning-content">
-                        <h4>Внимание: требуется VPN</h4>
-                        <p>Для доступа к генератору может потребоваться включить VPN.<br>
-                        Сервис доступен через Hugging Face Spaces.</p>
-                    </div>
-                </div>
-                
                 <div class="generator-description">
-                    <p>Создавайте 3D-модели с помощью искусственного интеллекта от Stability AI. 
-                    Просто опишите что нужно или загрузите изображение — нейросеть создаст 3D-модель за несколько минут.</p>
+                    <p><strong>Бесплатный 3D генератор от Stability AI</strong><br>
+                    Создавайте высококачественные 3D-модели из текста или изображений.<br>
+                    Работает прямо в браузере без регистрации через Hugging Face.</p>
                 </div>
                 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h4>Быстрая генерация</h4>
-                        <p>Создание модели занимает всего несколько минут</p>
+                <div class="generator-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🚀</span>
+                        <span>Молниеносная генерация 3D моделей</span>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <h4>Из фото в 3D</h4>
-                        <p>Превратите любую фотографию в 3D-модель</p>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <span>Текст и изображения в 3D</span>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fas fa-font"></i>
-                        </div>
-                        <h4>Текст в 3D</h4>
-                        <p>Опишите словами что хотите создать</p>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>Оптимизировано для скорости</span>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <h4>Экспорт моделей</h4>
-                        <p>Скачивайте в форматах для 3D-печати</p>
-                    </div>
-                </div>
-                
-                <div class="generator-info">
-                    <div class="info-item">
-                        <i class="fas fa-server"></i>
-                        <span>Платформа: <strong>Stability AI</strong></span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-globe"></i>
-                        <span>Доступ: <strong>Hugging Face Spaces</strong></span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-lock-open"></i>
-                        <span>Регистрация: <strong>Не требуется</strong></span>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔓</span>
+                        <span>Бесплатно и без регистрации</span>
                     </div>
                 </div>
                 
                 <div class="generator-actions">
-                    <div class="action-main">
-                        <a href="https://huggingface.co/spaces/stabilityai/stable-fast-3d" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="generator-btn primary"
-                           onclick="trackGeneratorClick()">
-                            <div class="btn-content">
-                                <div class="btn-icon">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </div>
-                                <div class="btn-text">
-                                    <span class="btn-title">Открыть генератор 3D</span>
-                                    <span class="btn-subtitle">Требуется VPN подключение</span>
-                                </div>
-                                <div class="btn-arrow">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    <a href="https://huggingface.co/spaces/stabilityai/stable-fast-3d" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="generator-btn primary"
+                       onclick="trackGeneratorClick()">
+                        <span>🚀 Открыть(Нужно VPN)</span>
+                        <span>→</span>
+                    </a>
                     
-                    <div class="action-secondary">
-                        <button class="generator-btn outline" onclick="closeGeneratorModal()">
-                            <i class="fas fa-clock"></i>
-                            Напомнить позже
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="generator-note">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Совет: перед использованием убедитесь что VPN активен. Если генератор не открывается, попробуйте другой VPN-сервер.</span>
+                    <!-- Добавить подсказку -->
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.6); text-align: center; margin-top: 8px;">
+                        ⚠️ Для доступа может потребоваться VPN
+                     </div> 
+
+                    <button class="generator-btn secondary" onclick="closeGeneratorModal()">
+                        <span>Вернуться позже</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1327,7 +1051,7 @@
                 <span class="nav-icon">✨</span>
             </div>
             <span class="nav-text">Создать 3D</span>
-            <span class="badge-new">VPN</span>
+            <span class="badge-new">FAST</span>
         </a>
         
         <a href="/courses" class="nav-item ">
@@ -1344,99 +1068,99 @@
         </a>
     </nav>
 
-    <script>
-        // Инициализация Telegram WebApp
-        Telegram.WebApp.ready();
-        Telegram.WebApp.expand();
+<script>
+    // Инициализация Telegram WebApp
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
 
-        // Функция для отслеживания кликов по генератору
-        function trackGeneratorClick() {
-            console.log('Stable Fast 3D generator opened');
-            
-            // Можно добавить аналитику
-            if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-                try {
-                    Telegram.WebApp.sendData(JSON.stringify({
-                        action: 'open_stable_fast_3d',
-                        timestamp: new Date().toISOString(),
-                        source: 'bottom_nav'
-                    }));
-                } catch (e) {
-                    console.log('Analytics error:', e);
-                }
+    // Функция для отслеживания кликов по генератору
+    function trackGeneratorClick() {
+        console.log('Stable Fast 3D generator opened');
+        
+        // Можно добавить аналитику
+        if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+            try {
+                Telegram.WebApp.sendData(JSON.stringify({
+                    action: 'open_stable_fast_3d',
+                    timestamp: new Date().toISOString(),
+                    source: 'bottom_nav'
+                }));
+            } catch (e) {
+                console.log('Analytics error:', e);
             }
-            
-            // Открываем в новой вкладке
-            return true;
         }
+        
+        // Открываем в новой вкладке
+        return true;
+    }
 
-        // Функции для модального окна генератора
-        function openGeneratorModal(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const modal = document.getElementById('generatorModal');
-            modal.style.display = 'flex';
-            
-            // Блокируем скролл на странице
-            document.body.style.overflow = 'hidden';
-            
-            // Трекинг открытия модального окна
-            console.log('Generator modal opened');
+    // Функции для модального окна генератора
+    function openGeneratorModal(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const modal = document.getElementById('generatorModal');
+        modal.style.display = 'flex';
+        
+        // Блокируем скролл на странице
+        document.body.style.overflow = 'hidden';
+        
+        // Трекинг открытия модального окна
+        console.log('Generator modal opened');
+    }
+
+    function closeGeneratorModal() {
+        const modal = document.getElementById('generatorModal');
+        modal.style.display = 'none';
+        
+        // Восстанавливаем скролл
+        document.body.style.overflow = 'auto';
+    }
+
+    // Закрытие при клике вне модального окна
+    document.getElementById('generatorModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeGeneratorModal();
         }
+    });
 
-        function closeGeneratorModal() {
-            const modal = document.getElementById('generatorModal');
-            modal.style.display = 'none';
-            
-            // Восстанавливаем скролл
-            document.body.style.overflow = 'auto';
+    // Закрытие по ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeGeneratorModal();
         }
+    });
 
-        // Закрытие при клике вне модального окна
-        document.getElementById('generatorModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGeneratorModal();
+    // Плавная загрузка - УБРАЛ АВТООТКРЫТИЕ
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.profile-animate').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.animationDelay = `${index * 0.1}s`;
+        });
+        
+        // Определяем активную страницу при загрузке
+        const currentPath = window.location.pathname;
+        const navItems = document.querySelectorAll('.nav-item:not(.generator)');
+        
+        navItems.forEach(item => {
+            const href = item.getAttribute('href');
+            if (currentPath === href || 
+                (href.includes('/collection') && currentPath.includes('/collection'))) {
+                item.classList.add('active');
             }
         });
-
-        // Закрытие по ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGeneratorModal();
-            }
-        });
-
-        // Плавная загрузка
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.profile-animate').forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.animationDelay = `${index * 0.1}s`;
-            });
-            
-            // Определяем активную страницу при загрузке
-            const currentPath = window.location.pathname;
-            const navItems = document.querySelectorAll('.nav-item:not(.generator)');
-            
-            navItems.forEach(item => {
-                const href = item.getAttribute('href');
-                if (currentPath === href || 
-                    (href.includes('/collection') && currentPath.includes('/collection'))) {
-                    item.classList.add('active');
-                }
-            });
-            
-            // Автооткрытие генератора при первом посещении - ОТКЛЮЧЕНО
-            // if (!localStorage.getItem('stableFast3dShown')) {
-            //     setTimeout(() => {
-            //         const modal = document.getElementById('generatorModal');
-            //         if (modal) {
-            //             openGeneratorModal(new Event('click'));
-            //             localStorage.setItem('stableFast3dShown', 'true');
-            //         }
-            //     }, 2000);
-            // }
-        });
-    </script>
+        
+        // УБРАЛ ЭТОТ БЛОК - больше не открывается автоматически
+        // if (!localStorage.getItem('stableFast3dShown')) {
+        //     setTimeout(() => {
+        //         const modal = document.getElementById('generatorModal');
+        //         if (modal) {
+        //             openGeneratorModal(new Event('click'));
+        //             localStorage.setItem('stableFast3dShown', 'true');
+        //         }
+        //     }, 2000);
+        // }
+    });
+</script>
 </body>
 </html>
