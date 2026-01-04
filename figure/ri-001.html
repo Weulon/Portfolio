@@ -171,14 +171,54 @@
         .generator-modal-content {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             border-radius: 20px;
-            max-width: 450px;
+            max-width: 500px;
             width: 100%;
             color: white;
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(0, 200, 83, 0.3);
+            border: 2px solid rgba(255, 107, 53, 0.3);
             animation: slideUp 0.4s ease;
-            box-shadow: 0 20px 60px rgba(0, 200, 83, 0.2);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Стили для скроллируемого контента */
+        .generator-content-scrollable {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(85vh - 180px);
+            -webkit-overflow-scrolling: touch;
+            padding: 0;
+        }
+
+        .generator-content-inner {
+            padding: 25px 30px;
+        }
+
+        /* Стили для скроллбара */
+        .generator-content-scrollable::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .generator-content-scrollable::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .generator-content-scrollable::-webkit-scrollbar-thumb {
+            background: rgba(255, 107, 53, 0.5);
+            border-radius: 8px;
+        }
+
+        .generator-content-scrollable::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 107, 53, 0.8);
+        }
+
+        /* Убираем старый генератор-контент стиль */
+        .generator-content {
+            display: none;
         }
 
         @keyframes fadeIn {
@@ -196,6 +236,151 @@
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
+        }
+
+        .generator-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .vpn-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #ff6b35, #ffb347);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 2px 8px;
+            margin-left: 8px;
+            box-shadow: 0 2px 8px rgba(255,107,53,0.15);
+        }
+
+        .vpn-warning {
+            display: flex;
+            align-items: flex-start;
+            background: rgba(255, 107, 53, 0.12);
+            border-left: 4px solid #ff6b35;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+            gap: 14px;
+        }
+        .warning-icon {
+            color: #ff6b35;
+            font-size: 1.6em;
+            margin-top: 2px;
+        }
+        .warning-content h4 {
+            margin: 0 0 4px 0;
+            font-size: 1.1em;
+            color: #ff6b35;
+        }
+        .warning-content p {
+            margin: 0;
+            font-size: 0.97em;
+            color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 14px 10px 10px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(255,107,53,0.07);
+        }
+        .feature-card-icon {
+            color: #ff6b35;
+            font-size: 1.5em;
+            margin-bottom: 6px;
+        }
+        .feature-card h4 {
+            margin: 0 0 4px 0;
+            font-size: 1.08em;
+            color: #fff;
+        }
+        .feature-card p {
+            margin: 0;
+            font-size: 0.93em;
+            color: #e0e0e0;
+        }
+
+        .generator-info {
+            margin-bottom: 18px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.98em;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .info-item i {
+            color: #ff6b35;
+        }
+
+        .generator-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.95em;
+            color: #fff;
+            margin-top: 18px;
+        }
+        .generator-note i {
+            color: #ffb347;
+            margin-top: 2px;
+        }
+
+        .generator-btn.outline {
+            background: transparent;
+            color: #ff6b35;
+            border: 1.5px solid #ff6b35;
+            box-shadow: none;
+        }
+        .generator-btn.outline:hover {
+            background: rgba(255, 107, 53, 0.08);
+        }
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-icon {
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .btn-title {
+            font-weight: 600;
+            font-size: 1em;
+        }
+        .btn-subtitle {
+            font-size: 0.85em;
+            color: #ffb347;
+        }
+        .btn-arrow {
+            font-size: 1.1em;
+            color: #fff;
         }
 
         .generator-header::after {
@@ -389,13 +574,14 @@
             .generator-modal-content {
                 margin: 10px;
                 max-width: calc(100% - 20px);
+                max-height: 90vh;
             }
 
-            .generator-header {
-                padding: 25px 20px 15px;
+            .generator-content-scrollable {
+                max-height: calc(90vh - 150px);
             }
 
-            .generator-content {
+            .generator-content-inner {
                 padding: 20px;
             }
         }
@@ -403,6 +589,9 @@
         @media (max-width: 320px) {
             .nav-text {
                 font-size: 10px;
+            }
+            .generator-content-scrollable {
+                max-height: calc(90vh - 140px);
             }
         }
         
@@ -978,58 +1167,115 @@
     <!-- Модальное окно генератора 3D -->
     <div id="generatorModal" class="generator-modal">
         <div class="generator-modal-content">
-            <button class="modal-close" onclick="closeGeneratorModal()">×</button>
+            <button class="modal-close" onclick="closeGeneratorModal()">
+                <i class="fas fa-times"></i>
+            </button>
             
             <div class="generator-header">
-                <div class="generator-icon">⚡</div>
-                <h2 class="generator-title">Stable Fast 3D</h2>
-                <p class="generator-subtitle">Молниеносная генерация 3D моделей</p>
+                <div class="generator-icon-wrapper">
+                    <div class="generator-icon">🤖</div>
+                    <div class="vpn-badge" title="Требуется VPN для доступа">
+                        <i class="fas fa-shield-alt"></i>
+                        VPN
+                    </div>
+                </div>
+                <h2 class="generator-title">AI Генератор 3D Моделей</h2>
+                <p class="generator-subtitle">Создание 3D из текста и изображений</p>
             </div>
-            
-            <div class="generator-content">
-                <div class="generator-description">
-                    <p><strong>Бесплатный 3D генератор от Stability AI</strong><br>
-                    Создавайте высококачественные 3D-модели из текста или изображений.<br>
-                    Работает прямо в браузере без регистрации через Hugging Face.</p>
-                </div>
-                
-                <div class="generator-features">
-                    <div class="feature-item">
-                        <span class="feature-icon">🚀</span>
-                        <span>Молниеносная генерация 3D моделей</span>
+            <!-- КОНТЕНТ С ПРОКРУТКОЙ -->
+            <div class="generator-content-scrollable">
+                <div class="generator-content-inner">
+                    <!-- Важное предупреждение о VPN -->
+                    <div class="vpn-warning">
+                        <div class="warning-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="warning-content">
+                            <h4>Внимание: требуется VPN</h4>
+                            <p>Для доступа к генератору может потребоваться включить VPN.<br>
+                            Сервис доступен через Hugging Face Spaces.</p>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🎨</span>
-                        <span>Текст и изображения в 3D</span>
+                    <div class="generator-description">
+                        <p>Создавайте 3D-модели с помощью искусственного интеллекта от Stability AI. 
+                        Просто опишите что нужно или загрузите изображение — нейросеть создаст 3D-модель за несколько минут.</p>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">⚡</span>
-                        <span>Оптимизировано для скорости</span>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>Быстрая генерация</h4>
+                            <p>Создание модели занимает всего несколько минут</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h4>Из фото в 3D</h4>
+                            <p>Превратите любую фотографию в 3D-модель</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <h4>Текст в 3D</h4>
+                            <p>Опишите словами что хотите создать</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4>Экспорт моделей</h4>
+                            <p>Скачивайте в форматах для 3D-печати</p>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🔓</span>
-                        <span>Бесплатно и без регистрации</span>
+                    <div class="generator-info">
+                        <div class="info-item">
+                            <i class="fas fa-server"></i>
+                            <span>Платформа: <strong>Stability AI</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Доступ: <strong>Hugging Face Spaces</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-lock-open"></i>
+                            <span>Регистрация: <strong>Не требуется</strong></span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="generator-actions">
-                    <a href="https://huggingface.co/spaces/stabilityai/stable-fast-3d" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="generator-btn primary"
-                       onclick="trackGeneratorClick()">
-                        <span>🚀 Открыть(Нужно VPN)</span>
-                        <span>→</span>
-                    </a>
-                    
-                    <!-- Добавить подсказку -->
-                    <div style="font-size: 12px; color: rgba(255,255,255,0.6); text-align: center; margin-top: 8px;">
-                        ⚠️ Для доступа может потребоваться VPN
-                     </div> 
-
-                    <button class="generator-btn secondary" onclick="closeGeneratorModal()">
-                        <span>Вернуться позже</span>
-                    </button>
+                    <div class="generator-actions">
+                        <div class="action-main">
+                            <a href="https://huggingface.co/spaces/stabilityai/stable-fast-3d" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="generator-btn primary"
+                               onclick="trackGeneratorClick()">
+                                <div class="btn-content">
+                                    <div class="btn-icon">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                    <div class="btn-text">
+                                        <span class="btn-title">Открыть генератор 3D</span>
+                                        <span class="btn-subtitle">Требуется VPN подключение</span>
+                                    </div>
+                                    <div class="btn-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="action-secondary">
+                            <button class="generator-btn outline" onclick="closeGeneratorModal()">
+                                <i class="fas fa-clock"></i>
+                                Напомнить позже
+                            </button>
+                        </div>
+                    </div>
+                    <div class="generator-note">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Совет: перед использованием убедитесь что VPN активен. Если генератор не открывается, попробуйте другой VPN-сервер.</span>
+                    </div>
                 </div>
             </div>
         </div>
