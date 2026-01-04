@@ -21,14 +21,14 @@
     background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
     color: white;
     border: none;
-    border-radius: 12px; /* Меньше скругление */
-    padding: 12px 24px; /* Меньше отступы */
-    font-size: 1em; /* Меньше размер текста */
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 1em;
     font-weight: 600;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* Меньше расстояние между элементами */
+    gap: 8px;
     transition: all 0.3s ease;
     box-shadow: 0 3px 10px rgba(255, 107, 53, 0.25);
     position: relative;
@@ -57,12 +57,12 @@
 }
 
 .btn-icon {
-    font-size: 1em; /* Меньше иконка */
+    font-size: 1em;
     transition: transform 0.3s ease;
 }
 
 .btn-arrow {
-    font-size: 0.9em; /* Меньше стрелка */
+    font-size: 0.9em;
     transition: transform 0.3s ease;
 }
 
@@ -85,7 +85,7 @@
     justify-content: center;
     padding: 20px;
     animation: fadeIn 0.3s ease;
-    overflow: hidden; /* Убираем скролл у оверлея */
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -103,7 +103,7 @@
     overflow: hidden;
     border: 1px solid rgba(255, 107, 53, 0.3);
     animation: slideUp 0.4s ease;
-    max-height: 85vh; /* Ограничиваем высоту */
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
 }
@@ -120,7 +120,7 @@
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
-    width: 32px; /* Меньше кнопка закрытия */
+    width: 32px;
     height: 32px;
     border-radius: 50%;
     cursor: pointer;
@@ -138,14 +138,14 @@
 }
 
 .modal-header {
-    padding: 30px 30px 15px; /* Меньше отступы */
+    padding: 30px 30px 15px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    flex-shrink: 0; /* Запрещаем сжиматься хедеру */
+    flex-shrink: 0;
 }
 
 .modal-icon {
-    font-size: 2em; /* Меньше иконка */
+    font-size: 2em;
     margin-bottom: 12px;
     display: block;
     animation: glow 2s infinite alternate;
@@ -157,14 +157,14 @@
 }
 
 .modal-title {
-    font-size: 1.5em; /* Меньше заголовок */
+    font-size: 1.5em;
     margin-bottom: 6px;
     color: #ff9e6d;
 }
 
 .modal-subtitle {
     opacity: 0.8;
-    font-size: 0.85em; /* Меньше подзаголовок */
+    font-size: 0.85em;
     margin-bottom: 4px;
     font-weight: 500;
 }
@@ -178,11 +178,11 @@
 
 /* КОНТЕНТ С ПРОКРУТКОЙ */
 .modal-content-scrollable {
-    padding: 20px 30px; /* Меньше отступы */
-    flex: 1; /* Занимает все доступное пространство */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    max-height: calc(85vh - 180px); /* Ограничиваем высоту для прокрутки */
-    -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+    padding: 20px 30px;
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(85vh - 180px);
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Стили для скроллбара */
@@ -207,7 +207,7 @@
 .info-highlight {
     background: rgba(255, 107, 53, 0.1);
     border-radius: 10px;
-    padding: 16px; /* Меньше отступы */
+    padding: 16px;
     margin-bottom: 20px;
     border-left: 3px solid #ff6b35;
 }
@@ -221,7 +221,7 @@
 .features-list {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Меньше расстояние между пунктами */
+    gap: 10px;
     margin-bottom: 20px;
 }
 
@@ -229,7 +229,7 @@
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    font-size: 0.9em; /* Меньше текст */
+    font-size: 0.9em;
     line-height: 1.4;
 }
 
@@ -237,7 +237,7 @@
     color: #4caf50;
     font-weight: bold;
     background: rgba(76, 175, 80, 0.1);
-    min-width: 20px; /* Меньше размер */
+    min-width: 20px;
     height: 20px;
     border-radius: 50%;
     display: flex;
@@ -248,6 +248,127 @@
     font-size: 0.9em;
 }
 
+/* FAQ СТИЛИ */
+.faq-section {
+    margin-top: 25px;
+}
+
+.faq-toggle {
+    background: rgba(124, 77, 255, 0.1);
+    border: 1px solid rgba(124, 77, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+}
+
+.faq-toggle:hover {
+    background: rgba(124, 77, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.faq-toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle.active .faq-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+    margin-top: -10px;
+    border: 1px solid rgba(124, 77, 255, 0.1);
+    border-top: none;
+}
+
+.faq-content.active {
+    max-height: 2000px;
+}
+
+.faq-list {
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.faq-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.faq-question-icon {
+    color: #7c4dff;
+    font-size: 1.1em;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.faq-question-text {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #ff9e6d;
+    line-height: 1.4;
+}
+
+.faq-answer {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: 24px;
+}
+
+.faq-answer ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.faq-answer li {
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.faq-answer li:before {
+    content: "•";
+    color: #7c4dff;
+    position: absolute;
+    left: -15px;
+}
+
+.faq-divider {
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.9em;
+    letter-spacing: 2px;
+}
+
 .important-note {
     background: rgba(255, 152, 0, 0.1);
     border-radius: 10px;
@@ -256,24 +377,25 @@
     align-items: flex-start;
     gap: 12px;
     border: 1px solid rgba(255, 152, 0, 0.3);
+    margin-top: 20px;
 }
 
 .note-icon {
-    font-size: 1.2em; /* Меньше иконка */
+    font-size: 1.2em;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .important-note p {
-    font-size: 0.9em; /* Меньше текст */
+    font-size: 0.9em;
     line-height: 1.5;
     margin: 0;
 }
 
 .modal-footer {
-    padding: 15px 30px 20px; /* Меньше отступы */
+    padding: 15px 30px 20px;
     text-align: center;
-    flex-shrink: 0; /* Запрещаем сжиматься футеру */
+    flex-shrink: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.2);
 }
@@ -282,14 +404,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Меньше расстояние */
+    gap: 10px;
     background: linear-gradient(135deg, #0088cc 0%, #005c99 100%);
     color: white;
     text-decoration: none;
-    padding: 14px 24px; /* Меньше отступы */
-    border-radius: 10px; /* Меньше скругление */
+    padding: 14px 24px;
+    border-radius: 10px;
     font-weight: 600;
-    font-size: 0.95em; /* Меньше текст */
+    font-size: 0.95em;
     transition: all 0.3s ease;
     width: 100%;
     box-shadow: 0 3px 10px rgba(0, 136, 204, 0.25);
@@ -315,7 +437,7 @@
     .order-modal-container {
         margin: 15px;
         max-width: calc(100% - 30px);
-        max-height: 90vh; /* На мобильных больше высота */
+        max-height: 90vh;
     }
     
     .modal-header {
@@ -343,6 +465,14 @@
     .feature-item {
         font-size: 0.85em;
     }
+    
+    .faq-question-text {
+        font-size: 0.9em;
+    }
+    
+    .faq-answer {
+        font-size: 0.85em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -352,7 +482,7 @@
     }
     
     .custom-order-btn {
-        width: auto; /* Не растягивать на всю ширину */
+        width: auto;
         justify-content: center;
     }
     
@@ -364,11 +494,15 @@
     .important-note p {
         font-size: 0.85em;
     }
+    
+    .faq-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
 }
 
 /* Дополнительные стили для удобства свайпов */
 @media (hover: none) and (pointer: coarse) {
-    /* Для тач-устройств */
     .modal-close-btn {
         width: 36px;
         height: 36px;
@@ -383,7 +517,10 @@
         padding: 16px 20px;
     }
     
-    /* Увеличиваем область для скролла */
+    .faq-toggle {
+        padding: 18px 20px;
+    }
+    
     .modal-content-scrollable {
         padding-bottom: 30px;
     }
@@ -446,6 +583,133 @@
                 </div>
             </div>
             
+            <!-- FAQ СЕКЦИЯ -->
+            <div class="faq-section">
+                <button class="faq-toggle" onclick="toggleFaq()">
+                    <span>Часто задаваемые вопросы (FAQ)</span>
+                    <span class="faq-toggle-icon">▼</span>
+                </button>
+                <div class="faq-content" id="faqContent">
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Нужен ли готовый 3D-файл или эскиз?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Нет. Достаточно идеи, описания или пары референсов.<br>Я помогу доработать концепт и предложу оптимальное решение.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Как формируется стоимость?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Стоимость зависит от:</p>
+                                <ul>
+                                    <li>сложности модели</li>
+                                    <li>размера фигурки</li>
+                                    <li>уровня детализации</li>
+                                </ul>
+                                <p>После обсуждения идеи я называю точную цену до начала работы.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Можно ли сделать дешевле?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Можно упростить модель: уменьшить размер, детализацию или отказаться от дополнительных элементов.<br>Цена всегда соответствует объёму работы.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Что если результат мне не понравится?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Перед печатью вы получаете 3D-превью.<br>На этом этапе можно внести правки и согласовать финальный вариант.<br>После согласования модель уходит в печать.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Сколько правок входит в стоимость?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>В стоимость входит 1–2 раунда правок на этапе 3D-превью.<br>Существенные изменения после согласования оплачиваются отдельно.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Сколько времени занимает работа?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Сроки зависят от сложности проекта.<br>В среднем — от нескольких дней до двух недель.<br>Мы работаем на качество, поэтому сроки минимум от 5 дней<br>Точные сроки обсуждаются заранее.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Будет ли модель точно готова к 3D-печати?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Да. Модель изначально подготавливается с учётом 3D-печати: геометрия, толщина стенок, устойчивость, корректная сетка.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Можно ли заказать по фото?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Да. Даже одного фото или краткого описания достаточно для начала работы.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Вы занимаетесь печатью и покраской?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Да, мы работаем с полным процессом от моделирования до покраски. Но если вам нужен определенный этап, это так же обсуждается отдельно (например только покраска, или только печать)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">Можно ли использовать модель в коммерческих целях?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>По умолчанию модель предназначена для личного использования.<br>Коммерческое использование обсуждается отдельно.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span class="faq-question-icon">❓</span>
+                                <span class="faq-question-text">С чего начать заказ?</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Просто напишите мне в Telegram и опишите вашу идею.<br>Я задам уточняющие вопросы и предложу оптимальный вариант реализации.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="important-note">
                 <div class="note-icon">💭</div>
                 <p>Я беру на себя весь технический процесс — от скульпта до готовой модели для печати. Если у вас есть идея, но вы не знаете, как ее реализовать — это нормально. Просто напишите, мы всё обсудим.</p>
@@ -465,9 +729,8 @@
 function openOrderInfo() {
     const modal = document.getElementById('orderInfoModal');
     modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+    document.body.style.overflow = 'hidden';
     
-    // Добавляем класс для анимации
     setTimeout(() => {
         modal.querySelector('.order-modal-container').classList.add('modal-slide-in');
     }, 10);
@@ -476,7 +739,21 @@ function openOrderInfo() {
 function closeOrderInfo() {
     const modal = document.getElementById('orderInfoModal');
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Возвращаем скролл страницы
+    document.body.style.overflow = 'auto';
+    
+    // Закрываем FAQ при закрытии модального окна
+    const faqContent = document.getElementById('faqContent');
+    const faqToggle = document.querySelector('.faq-toggle');
+    faqContent.classList.remove('active');
+    faqToggle.classList.remove('active');
+}
+
+function toggleFaq() {
+    const faqContent = document.getElementById('faqContent');
+    const faqToggle = document.querySelector('.faq-toggle');
+    
+    faqContent.classList.toggle('active');
+    faqToggle.classList.toggle('active');
 }
 
 // Закрытие модального окна при клике на оверлей
