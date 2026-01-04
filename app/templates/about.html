@@ -1,299 +1,678 @@
 {% extends "base.html" %}
 
 {% block header %}
-<header class="header">
-    <h1>О проекте</h1>
+<header class="header about-header">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+        <h1 class="header-title">3D Дизайнер / Скульптор</h1>
+        <p class="header-subtitle">Создаю уникальные фигурки и 3D-модели на заказ</p>
+        <div class="header-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-circle"></div>
+            <div class="decoration-circle"></div>
+        </div>
+    </div>
 </header>
 {% endblock %}
 
 {% block content %}
 <style>
-    /* Стили для страницы "О проекте" */
-    .minimal-container {
-        background: #1A1A1A;
-        border-radius: 24px;
-        padding: 32px;
-        margin-bottom: 32px;
+    /* Базовые переменные */
+    :root {
+        --primary: #ff6b35;
+        --primary-light: #ff9e6d;
+        --primary-dark: #e55a2b;
+        --secondary: #7c4dff;
+        --dark: #1a1a2e;
+        --darker: #0f0f1a;
+        --light: #f8f9fa;
+        --gray: #e9ecef;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --card-border: rgba(255, 255, 255, 0.1);
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+        --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+        --shadow-lg: 0 8px 40px rgba(0,0,0,0.2);
+        --radius-sm: 12px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
     }
 
-    .profile-title {
-        text-align: center;
-        margin-bottom: 32px;
-    }
-
-    .profile-title h1 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 12px;
+    /* Хедер */
+    .about-header {
+        background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
         color: white;
+        padding: 100px 0 80px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
     }
 
-    .profile-subtitle {
-        font-size: 18px;
-        color: #A0A0A0;
-        line-height: 1.6;
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(124, 77, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header-title {
+        font-size: 3.5em;
+        font-weight: 800;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #fff, var(--primary-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px rgba(255, 107, 53, 0.5); }
+        to { text-shadow: 0 0 20px rgba(255, 107, 53, 0.8); }
+    }
+
+    .header-subtitle {
+        font-size: 1.3em;
+        opacity: 0.9;
         max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+    }
+
+    .header-decoration {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .decoration-circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        animation: pulse 2s infinite;
+    }
+
+    .decoration-circle:nth-child(2) {
+        animation-delay: 0.4s;
+        background: var(--secondary);
+    }
+
+    .decoration-circle:nth-child(3) {
+        animation-delay: 0.8s;
+        background: #00B4D8;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.7; }
+    }
+
+    /* Основной контейнер */
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Секция описания */
+    .description-section {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius-lg);
+        padding: 50px;
+        margin-bottom: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .description-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .description-text {
+        font-size: 1.2em;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        max-width: 900px;
         margin: 0 auto;
     }
 
-    .section-divider {
-        height: 1px;
-        background: #2A2A2A;
-        margin: 32px 0;
+    .highlight {
+        color: var(--primary-light);
+        font-weight: 600;
     }
 
-    .contacts-title {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 24px;
+    /* Секция услуг */
+    .services-section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2.2em;
+        text-align: center;
+        margin-bottom: 40px;
         color: white;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .service-card {
+        background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 53, 0.05) 100%);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius-md);
+        padding: 35px 30px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover::before {
+        opacity: 1;
+    }
+
+    .service-icon {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        display: block;
         text-align: center;
     }
 
-    .contacts-list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+    .service-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
     }
 
-    .contact-button {
+    .service-description {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .service-price {
+        color: var(--primary-light);
+        font-weight: 600;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .service-button {
+        display: block;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .service-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+
+    /* Секция контактов */
+    .contacts-section {
+        margin-bottom: 80px;
+    }
+
+    .contacts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .contact-card {
+        background: linear-gradient(135deg, var(--card-bg) 0%, rgba(124, 77, 255, 0.05) 100%);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius-md);
+        padding: 30px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--secondary);
+        box-shadow: var(--shadow-md);
+    }
+
+    .contact-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary), #00B4D8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .contact-card:hover::before {
+        opacity: 1;
+    }
+
+    .contact-header {
         display: flex;
         align-items: center;
-        background: #121212;
-        border: 1px solid #2A2A2A;
-        border-radius: 16px;
-        padding: 24px;
-        text-decoration: none;
-        color: white;
-        transition: all 0.2s ease;
+        margin-bottom: 20px;
     }
 
-    .contact-button:hover {
-        background: #242424;
-        border-color: #7C4DFF;
-        transform: translateY(-2px);
-    }
-
-    .contact-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
+    .contact-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
         margin-right: 20px;
+        font-size: 1.8em;
         flex-shrink: 0;
     }
 
-    .contact-icon.telegram {
-        background: rgba(0, 136, 204, 0.15);
-        color: #0088cc;
-    }
+    .telegram-bg { background: rgba(0, 136, 204, 0.15); color: #0088cc; }
+    .artstation-bg { background: rgba(0, 180, 216, 0.15); color: #00B4D8; }
+    .behance-bg { background: rgba(23, 105, 255, 0.15); color: #1769ff; }
+    .tiktok-bg { background: rgba(0, 0, 0, 0.15); color: #000000; }
+    .instagram-bg { background: linear-gradient(135deg, rgba(225, 48, 108, 0.15), rgba(253, 29, 29, 0.15)); color: #E1306C; }
 
-    .contact-icon.email {
-        background: rgba(219, 68, 55, 0.15);
-        color: #DB4437;
-    }
-
-    .contact-icon.portfolio {
-        background: rgba(0, 180, 216, 0.15);
-        color: #00B4D8;
-    }
-
-    .contact-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contact-label {
-        font-size: 18px;
+    .contact-title {
+        font-size: 1.2em;
         font-weight: 600;
-        margin-bottom: 6px;
         color: white;
+        margin-bottom: 5px;
     }
 
-    .contact-value {
-        font-size: 16px;
-        color: #A0A0A0;
+    .contact-username {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95em;
+    }
+
+    .contact-description {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 0.95em;
     }
 
     .contact-arrow {
-        color: #7C4DFF;
-        font-size: 24px;
+        color: var(--secondary);
         font-weight: bold;
-        margin-left: 12px;
-        flex-shrink: 0;
+        font-size: 1.2em;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .contact-button:hover .contact-arrow {
-        transform: translateX(4px);
+    .contact-card:hover .contact-arrow {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+
+    /* CTA секция */
+    .cta-section {
+        text-align: center;
+        padding: 60px 40px;
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(124, 77, 255, 0.1) 100%);
+        border-radius: var(--radius-lg);
+        margin: 60px 0;
+        border: 1px solid var(--card-border);
+    }
+
+    .cta-title {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .cta-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1em;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        text-decoration: none;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-md);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+        gap: 16px;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease;
     }
 
     /* Адаптивность */
     @media (max-width: 768px) {
-        .minimal-container {
-            padding: 24px;
-            margin: 16px;
+        .header-title {
+            font-size: 2.5em;
         }
-
-        .profile-title h1 {
-            font-size: 24px;
+        
+        .header-subtitle {
+            font-size: 1.1em;
         }
-
-        .profile-subtitle {
-            font-size: 16px;
+        
+        .description-section {
+            padding: 30px 20px;
         }
-
-        .contact-button {
-            padding: 20px;
+        
+        .services-grid,
+        .contacts-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            font-size: 24px;
-            margin-right: 16px;
+        
+        .service-card,
+        .contact-card {
+            padding: 25px;
         }
-
-        .contact-label {
-            font-size: 17px;
+        
+        .section-title {
+            font-size: 1.8em;
         }
-
-        .contact-value {
-            font-size: 15px;
+        
+        .cta-section {
+            padding: 40px 20px;
+        }
+        
+        .cta-title {
+            font-size: 1.6em;
         }
     }
 
     @media (max-width: 480px) {
-        .minimal-container {
-            padding: 20px;
-            margin: 12px;
+        .header-title {
+            font-size: 2em;
         }
-
-        .contact-button {
-            padding: 18px;
+        
+        .about-header {
+            padding: 80px 0 60px;
         }
-
-        .contact-icon {
-            width: 44px;
-            height: 44px;
-            font-size: 22px;
-            margin-right: 14px;
+        
+        .contact-header {
+            flex-direction: column;
+            text-align: center;
         }
-
-        .contact-label {
-            font-size: 16px;
+        
+        .contact-icon-wrapper {
+            margin-right: 0;
+            margin-bottom: 15px;
         }
-
-        .contact-value {
-            font-size: 14px;
+        
+        .cta-button {
+            width: 100%;
+            justify-content: center;
         }
     }
 </style>
 
-<div class="minimal-container">
+<div class="about-container">
 
-    <!-- Заголовок -->
-    <div class="profile-title">
-        <h1>3D Дизайнер / Скульптор</h1>
-        <p class="profile-subtitle">
-            Создаю уникальные фигурки и 3D-модели на заказ.<br>
-            Выполняю скульптинг, моделирование и анимацию для игр и коллекционных моделей.
+    <!-- Описание -->
+    <section class="description-section animate-fade-in">
+        <p class="description-text">
+            <span class="highlight">Скульптинг, моделирование и анимация</span> для игр и коллекционных моделей. 
+            Создаю уникальные фигурки на заказ с полным циклом: от идеи до готовой к печати модели.
+            Специализируюсь на персонажах, существ и стилизованных арт-объектах.
         </p>
-    </div>
+    </section>
 
-    <!-- Услуги фрилансера -->
-    <div class="section-divider"></div>
-    <h2 class="contacts-title">Мои услуги</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 32px;">
-        <div style="background:#232323; border-radius:16px; padding:20px 24px; min-width:260px; max-width:320px; flex:1 1 260px; display:flex; flex-direction:column; align-items:center;">
-            <div style="font-weight:600; font-size:18px; margin-bottom:8px;">Индивидуальное менторство (Blender)</div>
-            <div style="color:#A0A0A0; font-size:15px; margin-bottom:12px;">1500₽ в час. Персональное обучение и поддержка по Blender.</div>
-            <a href="https://t.me/dikayl" target="_blank" style="background:linear-gradient(135deg,#7C4DFF,#b8893c);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;">Написать мне</a>
+    <!-- Услуги -->
+    <section class="services-section animate-fade-in">
+        <h2 class="section-title">Мои услуги</h2>
+        
+        <div class="services-grid">
+            <!-- Услуга 1 -->
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">Индивидуальное менторство (Blender)</h3>
+                <p class="service-description">
+                    Персональное обучение Blender. Помощь в освоении инструментов, создании проектов и решении сложных задач.
+                </p>
+                <div class="service-price">1500₽ в час</div>
+                <a href="https://t.me/dikayl" target="_blank" class="service-button">
+                    Написать мне
+                </a>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3 class="service-title">Готовая 3D анимация</h3>
+                <p class="service-description">
+                    Создание качественной анимации персонажей или сцен под ваши задачи. От идеи до финального рендера.
+                </p>
+                <div class="service-price">Индивидуально</div>
+                <a href="https://t.me/dikayl" target="_blank" class="service-button">
+                    Обсудить проект
+                </a>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="service-card">
+                <div class="service-icon">🖌️</div>
+                <h3 class="service-title">Скульптинг для 3D печати</h3>
+                <p class="service-description">
+                    Создание уникальных моделей для печати и коллекционирования. Полная подготовка модели к 3D-печати.
+                </p>
+                <div class="service-price">От 5000₽</div>
+                <a href="https://t.me/dikayl" target="_blank" class="service-button">
+                    Заказать фигурку
+                </a>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3 class="service-title">Разработка Mini Apps</h3>
+                <p class="service-description">
+                    Создание Telegram Mini Apps и веб-приложений под ключ. Python, HTML, CSS для вашего бизнеса.
+                </p>
+                <div class="service-price">От 15000₽</div>
+                <a href="https://t.me/dikayl" target="_blank" class="service-button">
+                    Обсудить проект
+                </a>
+            </div>
         </div>
-        <div style="background:#232323; border-radius:16px; padding:20px 24px; min-width:260px; max-width:320px; flex:1 1 260px; display:flex; flex-direction:column; align-items:center;">
-            <div style="font-weight:600; font-size:18px; margin-bottom:8px;">Готовая 3D анимация</div>
-            <div style="color:#A0A0A0; font-size:15px; margin-bottom:12px;">Персонажа или сцены. Качественная анимация под ваши задачи.</div>
-            <a href="https://t.me/dikayl" target="_blank" style="background:linear-gradient(135deg,#7C4DFF,#b8893c);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;">Написать мне</a>
-        </div>
-        <div style="background:#232323; border-radius:16px; padding:20px 24px; min-width:260px; max-width:320px; flex:1 1 260px; display:flex; flex-direction:column; align-items:center;">
-            <div style="font-weight:600; font-size:18px; margin-bottom:8px;">Скульптинг персонажей для 3D печати</div>
-            <div style="color:#A0A0A0; font-size:15px; margin-bottom:12px;">Создание уникальных моделей для печати и коллекционирования.</div>
-            <a href="https://t.me/dikayl" target="_blank" style="background:linear-gradient(135deg,#7C4DFF,#b8893c);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;">Написать мне</a>
-        </div>
-        <div style="background:#232323; border-radius:16px; padding:20px 24px; min-width:260px; max-width:320px; flex:1 1 260px; display:flex; flex-direction:column; align-items:center;">
-            <div style="font-weight:600; font-size:18px; margin-bottom:8px;">Разработка mini app, приложений под ключ</div>
-            <div style="color:#A0A0A0; font-size:15px; margin-bottom:12px;">Python, HTML, CSS для Telegram и других платформ.</div>
-            <a href="https://t.me/dikayl" target="_blank" style="background:linear-gradient(135deg,#7C4DFF,#b8893c);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;">Написать мне</a>
-        </div>
-    </div>
-    <!-- Разделитель -->
-    <div class="section-divider"></div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="cta-section animate-fade-in">
+        <h2 class="cta-title">Есть идея для проекта?</h2>
+        <p class="cta-text">
+            Обсудим вашу задумку и найдём оптимальное решение. 
+            От концепции до реализации — я помогу создать именно то, что вы хотите.
+        </p>
+        <a href="https://t.me/dikayl" target="_blank" class="cta-button">
+            <span>Начать проект</span>
+            <span>→</span>
+        </a>
+    </section>
 
     <!-- Контакты -->
-    <h2 class="contacts-title">Контакты</h2>
-
-    <div class="contacts-list">
-        <!-- Кнопка 1: Telegram -->
-        <a href="https://t.me/dikayl" class="contact-button" target="_blank">
-            <div class="contact-icon telegram">
-                <i class="fab fa-telegram"></i>
-            </div>
-            <div class="contact-info">
-                <div class="contact-label">Написать в Telegram</div>
-                <div class="contact-value">@dikayl</div>
-            </div>
-            <span class="contact-arrow">→</span>
-        </a>
-
-        <!-- Кнопка 2: ArtStation -->
-        <a href="https://di.kayl.artstation.com" target="_blank" class="contact-button">
-            <div class="contact-icon artstation">
-                <i class="fab fa-artstation"></i>
-            </div>
-            <div class="contact-info">
-                <div class="contact-label">Портфолио на ArtStation</div>
-                <div class="contact-value">di.kayl.artstation.com</div>
-            </div>
-            <span class="contact-arrow">→</span>
-        </a>
-
-        <!-- Кнопка 3: Behance -->
-        <a href="https://www.behance.net/c572f24c" target="_blank" class="contact-button">
-            <div class="contact-icon behance">
-                <i class="fab fa-behance"></i>
-            </div>
-            <div class="contact-info">
-                <div class="contact-label">Behance</div>
-                <div class="contact-value">behance.net/c572f24c</div>
-            </div>
-            <span class="contact-arrow">→</span>
-        </a>
-
-        <!-- Кнопка 4: TikTok -->
-        <a href="https://www.tiktok.com/@neko_cgi?_r=1&_t=ZS-92kM6zHqSUD" target="_blank" class="contact-button">
-            <div class="contact-icon tiktok">
-                <i class="fab fa-tiktok"></i>
-            </div>
-            <div class="contact-info">
-                <div class="contact-label">TikTok</div>
-                <div class="contact-value">@neko_cgi</div>
-            </div>
-            <span class="contact-arrow">→</span>
-        </a>
-
-        <!-- Кнопка 5: Instagram -->
-        <a href="https://www.instagram.com/neko_cgi" target="_blank" class="contact-button">
-            <div class="contact-icon instagram">
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="contact-info">
-                <div class="contact-label">Instagram</div>
-                <div class="contact-value">@neko_cgi</div>
-            </div>
-            <span class="contact-arrow">→</span>
-        </a>
+    <section class="contacts-section animate-fade-in">
+        <h2 class="section-title">Мои контакты</h2>
         
+        <div class="contacts-grid">
+            <!-- Telegram -->
+            <a href="https://t.me/dikayl" target="_blank" class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon-wrapper telegram-bg">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-title">Telegram</h3>
+                        <p class="contact-username">@dikayl</p>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Основной способ связи. Отвечаю быстро, обсуждаем проекты и консультирую.
+                </p>
+                <span class="contact-arrow">→</span>
+            </a>
+
+            <!-- ArtStation -->
+            <a href="https://di.kayl.artstation.com" target="_blank" class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon-wrapper artstation-bg">
+                        <i class="fab fa-artstation"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-title">ArtStation</h3>
+                        <p class="contact-username">di.kayl.artstation.com</p>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Основное портфолио с 3D работами, скульптингом и моделями для печати.
+                </p>
+                <span class="contact-arrow">→</span>
+            </a>
+
+            <!-- Behance -->
+            <a href="https://www.behance.net/c572f24c" target="_blank" class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon-wrapper behance-bg">
+                        <i class="fab fa-behance"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-title">Behance</h3>
+                        <p class="contact-username">behance.net/c572f24c</p>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Графические работы, UI/UX дизайн и дополнительные проекты.
+                </p>
+                <span class="contact-arrow">→</span>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@neko_cgi?_r=1&_t=ZS-92kM6zHqSUD" target="_blank" class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon-wrapper tiktok-bg">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-title">TikTok</h3>
+                        <p class="contact-username">@neko_cgi</p>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Короткие видео с процессом создания 3D моделей и результатами работы.
+                </p>
+                <span class="contact-arrow">→</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/neko_cgi" target="_blank" class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon-wrapper instagram-bg">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-title">Instagram</h3>
+                        <p class="contact-username">@neko_cgi</p>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Процесс работы, закулисье и обновления о новых проектах.
+                </p>
+                <span class="contact-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+</div>
 {% endblock %}
