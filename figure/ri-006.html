@@ -38,6 +38,7 @@
             transition: all 0.3s ease;
             flex: 1;
             max-width: 120px;
+            position: relative;
         }
 
         .nav-item:hover {
@@ -47,6 +48,23 @@
         .nav-item.active {
             background: rgba(124, 77, 255, 0.15);
             border: 1px solid rgba(124, 77, 255, 0.3);
+        }
+
+        /* Специальный стиль для кнопки генератора 3D */
+        .nav-item.generator {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.15) 0%, rgba(0, 92, 153, 0.15) 100%);
+            border: 1px solid rgba(0, 136, 204, 0.3);
+            animation: pulse-blue 3s infinite;
+        }
+
+        .nav-item.generator:hover {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.25) 0%, rgba(0, 92, 153, 0.25) 100%);
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse-blue {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(0, 136, 204, 0); }
         }
 
         .nav-icon-wrapper {
@@ -67,6 +85,30 @@
             box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
         }
 
+        /* Специальный стиль для иконки генератора */
+        .nav-item.generator .nav-icon-wrapper {
+            background: linear-gradient(135deg, #0088cc 0%, #005c99 100%);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+        }
+
+        .nav-item.generator .nav-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #0088cc, #00a8ff);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-item.generator:hover .nav-icon-wrapper::after {
+            opacity: 1;
+        }
+
         .nav-icon {
             font-size: 20px;
             color: #A0A0A0;
@@ -76,6 +118,19 @@
         .nav-item.active .nav-icon {
             color: white;
             transform: scale(1.1);
+        }
+
+        .nav-item.generator .nav-icon {
+            color: white;
+            animation: rotate-3d 6s infinite linear;
+        }
+
+        @keyframes rotate-3d {
+            0% { transform: rotateY(0deg); }
+            25% { transform: rotateY(90deg); }
+            50% { transform: rotateY(180deg); }
+            75% { transform: rotateY(270deg); }
+            100% { transform: rotateY(360deg); }
         }
 
         .nav-text {
@@ -89,6 +144,216 @@
         .nav-item.active .nav-text {
             color: white;
             font-weight: 600;
+        }
+
+        .nav-item.generator .nav-text {
+            color: #4fc3f7;
+            font-weight: 600;
+        }
+
+        /* Стили для модального окна генератора 3D */
+        .generator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .generator-modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            max-width: 450px;
+            width: 100%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 136, 204, 0.3);
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 136, 204, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .generator-header {
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .generator-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0088cc, #00bcd4);
+            border-radius: 2px;
+        }
+
+        .generator-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .generator-title {
+            font-size: 1.8em;
+            color: #4fc3f7;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .generator-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+        }
+
+        .generator-content {
+            padding: 25px 30px;
+        }
+
+        .generator-description {
+            background: rgba(0, 136, 204, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid #0088cc;
+        }
+
+        .generator-description p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .generator-features {
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .feature-icon {
+            color: #4caf50;
+            font-size: 1.2em;
+        }
+
+        .generator-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .generator-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .generator-btn.primary {
+            background: linear-gradient(135deg, #0088cc 0%, #005c99 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+        }
+
+        .generator-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+            gap: 16px;
+        }
+
+        .generator-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .generator-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 136, 204, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* Бейдж для новых функций */
+        .badge-new {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: linear-gradient(135deg, #ff4081, #ff6b6b);
+            color: white;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            animation: badge-pulse 2s infinite;
+        }
+
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         /* Анимация для активного состояния */
@@ -119,6 +384,19 @@
 
             .nav-text {
                 font-size: 11px;
+            }
+
+            .generator-modal-content {
+                margin: 10px;
+                max-width: calc(100% - 20px);
+            }
+
+            .generator-header {
+                padding: 25px 20px 15px;
+            }
+
+            .generator-content {
+                padding: 20px;
             }
         }
 
@@ -692,6 +970,50 @@
         </main>
     </div>
 
+    <!-- Модальное окно генератора 3D -->
+    <div id="generatorModal" class="generator-modal">
+        <div class="generator-modal-content">
+            <button class="modal-close" onclick="closeGeneratorModal()">×</button>
+            
+            <div class="generator-header">
+                <div class="generator-icon">🎨</div>
+                <h2 class="generator-title">Генератор 3D Моделей</h2>
+                <p class="generator-subtitle">Из фото в 3D за несколько кликов</p>
+            </div>
+            
+            <div class="generator-content">
+                <div class="generator-description">
+                    <p>Создайте 3D-модель из любой фотографии с помощью нейросети от Tencent. Идеально для быстрого прототипирования и вдохновения!</p>
+                </div>
+                
+                <div class="generator-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🤖</span>
+                        <span>Искусственный интеллект от Tencent</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>Быстрое создание модели из фото</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <span>Идеально для прототипов и идей</span>
+                    </div>
+                </div>
+                
+                <div class="generator-actions">
+                    <a href="https://3d.hunyuan.tencent.com" target="_blank" class="generator-btn primary">
+                        <span>🚀 Перейти к генератору</span>
+                        <span>→</span>
+                    </a>
+                    <button class="generator-btn secondary" onclick="closeGeneratorModal()">
+                        <span>Вернуться позже</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Нижнее меню -->
     <nav class="bottom-nav">
         <a href="/" class="nav-item ">
@@ -706,6 +1028,16 @@
             </div>
             <span class="nav-text">Каталог</span>
         </a>
+        
+        <!-- Новая кнопка генератора 3D -->
+        <a href="#" class="nav-item generator" onclick="openGeneratorModal(event)">
+            <div class="nav-icon-wrapper">
+                <span class="nav-icon">✨</span>
+            </div>
+            <span class="nav-text">Создать 3D</span>
+            <span class="badge-new">NEW</span>
+        </a>
+        
         <a href="/courses" class="nav-item ">
             <div class="nav-icon-wrapper">
                 <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
@@ -725,6 +1057,43 @@
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
 
+        // Функции для модального окна генератора
+        function openGeneratorModal(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const modal = document.getElementById('generatorModal');
+            modal.style.display = 'flex';
+            
+            // Блокируем скролл на странице
+            document.body.style.overflow = 'hidden';
+            
+            // Аналитика (если нужно)
+            console.log('Generator modal opened');
+        }
+
+        function closeGeneratorModal() {
+            const modal = document.getElementById('generatorModal');
+            modal.style.display = 'none';
+            
+            // Восстанавливаем скролл
+            document.body.style.overflow = 'auto';
+        }
+
+        // Закрытие при клике вне модального окна
+        document.getElementById('generatorModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGeneratorModal();
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGeneratorModal();
+            }
+        });
+
         // Плавная загрузка
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.profile-animate').forEach((el, index) => {
@@ -734,7 +1103,7 @@
             
             // Определяем активную страницу при загрузке
             const currentPath = window.location.pathname;
-            const navItems = document.querySelectorAll('.nav-item');
+            const navItems = document.querySelectorAll('.nav-item:not(.generator)');
             
             navItems.forEach(item => {
                 const href = item.getAttribute('href');
@@ -743,6 +1112,14 @@
                     item.classList.add('active');
                 }
             });
+            
+            // Автооткрытие генератора при первом посещении
+            if (!localStorage.getItem('generatorShown')) {
+                setTimeout(() => {
+                    openGeneratorModal(new Event('click'));
+                    localStorage.setItem('generatorShown', 'true');
+                }, 2000);
+            }
         });
     </script>
 </body>
