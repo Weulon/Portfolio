@@ -10,6 +10,14 @@ collections = [
         "badge": "NEW"
     },
     {
+        "id": "IND_Collection",
+        "title": "IND_Collection",
+        "subtitle": "Смоделируем и напечатаем по вашему эскизу или фантазии",
+        "image": "/static/images/Juju/logo.jpg",
+        "description": "Фигурки были выполнены по индивидуальному заказу на 3D печать",
+        "badge": None
+    },
+    {
         "id": "LM_Collection",
         "title": "LM_Collection",
         "subtitle": "Индивидуальная коллекция",
@@ -45,6 +53,111 @@ collections = [
 ]
 
 figures = [
+    {
+        "id": "IND-002-07",
+        "collection_id": "Individual_Style",
+        "title": "Individual_07",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/7.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-06",
+        "collection_id": "Individual_Style",
+        "title": "Individual_06",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/6.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-05",
+            "collection_id": "Individual_Style",
+        "title": "Individual_05",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/5.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-04",
+            "collection_id": "Individual_Style",
+        "title": "Individual_04",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/4.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-03",
+            "collection_id": "Individual_Style",
+        "title": "Individual_03",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/3.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-02",
+            "collection_id": "Individual_Style",
+        "title": "Individual_02",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/2.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "IND-002-01",
+            "collection_id": "Individual_Style",
+        "title": "Individual_01",
+        "price": "$50",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "Вы можете предложить свою идею, а мы ее реализуем",
+        "size": "15 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/Juju/1.jpg"
+        ],
+        "is_available": True
+    },
     {
         "id": "ri-002-17",
         "collection_id": "Brelok",
@@ -184,7 +297,7 @@ figures = [
         "id": "ri-002-lm08",
         "collection_id": "LM_Collection",
         "title": "LM_08",
-        "price": "$240",
+        "price": "$170",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
@@ -200,7 +313,7 @@ figures = [
         "id": "ri-002-lm07",
         "collection_id": "LM_Collection",
         "title": "LM_07",
-        "price": "$265",
+        "price": "$189",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
@@ -215,7 +328,7 @@ figures = [
         "id": "ri-002-lm06",
         "collection_id": "LM_Collection",
         "title": "LM_06",
-        "price": "$260",
+        "price": "$176",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
@@ -245,7 +358,7 @@ figures = [
         "id": "ri-002-lm04",
         "collection_id": "LM_Collection",
         "title": "LM_04",
-        "price": "$230",
+        "price": "$190",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
@@ -275,7 +388,7 @@ figures = [
         "id": "ri-002-lm02",
         "collection_id": "LM_Collection",
         "title": "LM_02",
-        "price": "$230",
+        "price": "$189",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
@@ -290,7 +403,7 @@ figures = [
         "id": "ri-002-lm01",
         "collection_id": "LM_Collection",
         "title": "LM_01",
-        "price": "$250",
+        "price": "$180",
         "status": "order",
         "status_text": "На заказ",
         "description": "Order Collection",
