@@ -55,7 +55,7 @@ collections = [
 figures = [
     {
         "id": "IND-002-07",
-        "collection_id": "Individual_Style",
+        "collection_id": "IND_Collection",
         "title": "Individual_07",
         "price": "$50",
         "status": "order",
@@ -70,7 +70,7 @@ figures = [
     },
     {
         "id": "IND-002-06",
-        "collection_id": "Individual_Style",
+        "collection_id": "IND_Collection",
         "title": "Individual_06",
         "price": "$50",
         "status": "order",
@@ -85,7 +85,7 @@ figures = [
     },
     {
         "id": "IND-002-05",
-            "collection_id": "Individual_Style",
+            "collection_id": "IND_Collection",
         "title": "Individual_05",
         "price": "$50",
         "status": "order",
@@ -100,7 +100,7 @@ figures = [
     },
     {
         "id": "IND-002-04",
-            "collection_id": "Individual_Style",
+            "collection_id": "IND_Collection",
         "title": "Individual_04",
         "price": "$50",
         "status": "order",
@@ -115,7 +115,7 @@ figures = [
     },
     {
         "id": "IND-002-03",
-            "collection_id": "Individual_Style",
+            "collection_id": "IND_Collection",
         "title": "Individual_03",
         "price": "$50",
         "status": "order",
@@ -130,7 +130,7 @@ figures = [
     },
     {
         "id": "IND-002-02",
-            "collection_id": "Individual_Style",
+            "collection_id": "IND_Collection",
         "title": "Individual_02",
         "price": "$50",
         "status": "order",
@@ -145,7 +145,7 @@ figures = [
     },
     {
         "id": "IND-002-01",
-            "collection_id": "Individual_Style",
+            "collection_id": "IND_Collection",
         "title": "Individual_01",
         "price": "$50",
         "status": "order",
