@@ -1,42 +1,104 @@
 {% extends "base.html" %}
-{% block title %}Подготовка 3D-модели к печати{% endblock %}
+{% block title %}Mobile Legends → 3D-печать{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1>Подготовка 3D-модели к печати</h1>
-    <h2 class="subtitle">От скульпта до физической фигурки</h2>
-    <div class="video-wrapper" style="display:none;">
-      <div style="padding:55.42% 0 0 0;position:relative;">
-        <iframe 
-          src="#"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;"
-          title="Workspace">
-        </iframe>
-      </div>
+
+    <!-- H1 / Hook -->
+    <h1>Как вытащить модель из Mobile Legends и подготовить её для 3D-печати</h1>
+    <p class="subtitle">
+        Практический курс по подготовке игровых моделей к физической печати — без теории ради теории.
+    </p>
+
+    <!-- Vimeo Video -->
+    <div class="video-wrapper">
+        <div style="padding:56.25% 0 0 0; position:relative;">
+            <iframe
+                src="https://player.vimeo.com/video/VIDEO_ID_HERE"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                title="Course Preview">
+            </iframe>
+        </div>
     </div>
     <script src="https://player.vimeo.com/api/player.js"></script>
 
+    <!-- Description -->
+    <div class="text-block">
+        <p>
+            В этом курсе я показываю полный рабочий процесс подготовки игровых моделей к 3D-печати.
+            Без догадок и абстрактных объяснений — только реальные действия и логика решений.
+        </p>
+        <p>
+            Ты видишь, как модель проходит путь от игрового ассета до полностью готового физического объекта,
+            который можно сразу отправлять на принтер.
+        </p>
+    </div>
+
+    <!-- Why -->
     <div class="course-block">
-        <h3>Что будет в курсе:</h3>
+        <h3>Почему игровые модели нельзя просто взять и распечатать</h3>
+        <p>
+            Игровая модель и модель для 3D-печати решают разные задачи.
+            В игре важна производительность, для печати — прочность, целостность и корректная геометрия.
+        </p>
+        <p>
+            В курсе я показываю типовые ошибки и объясняю, как устранять их ещё до начала печати.
+        </p>
+    </div>
+
+    <!-- Course content -->
+    <div class="course-block">
+        <h3>Что входит в курс</h3>
         <ul>
-            <li>✓ Подготовка модели к печати</li>
-            <li>✓ Исправление ошибок меша</li>
-            <li>✓ Разделение модели под печать</li>
-            <li>✓ Экспорт и проверка</li>
-            <li>✓ Реальные кейсы</li>
+            <li>✓ Извлечение модели из игры</li>
+            <li>✓ Очистка от лишней геометрии</li>
+            <li>✓ Оптимизация под 3D-печать</li>
+            <li>✓ Подготовка подставки и никнейма</li>
+            <li>✓ Проверка перед печатью</li>
         </ul>
     </div>
+
     <div class="course-block">
-        <h3>Для кого этот курс:</h3>
+        <h3>Второй блок: сложные модели</h3>
+        <p>
+            Мы закрепляем навык на более сложном примере:
+        </p>
         <ul>
-            <li>• 3D-артисты</li>
-            <li>• Скульпторы</li>
-            <li>• Владельцы 3D-принтеров</li>
+            <li>• типовые проблемы сложных ассетов</li>
+            <li>• ошибки, которые ломают модель при печати</li>
+            <li>• как исправлять геометрию осознанно, а не наугад</li>
         </ul>
+        <p>
+            Модель доводится до финального состояния в профессиональной среде для скульптинга.
+        </p>
     </div>
-    <div class="buy-button" style="pointer-events:none;opacity:0.7;">Скоро будет доступен</div>
+
+    <!-- Result -->
+    <div class="course-block">
+        <h3>Результат</h3>
+        <p>
+            После курса ты понимаешь принцип подготовки моделей.
+            Это позволяет работать с моделями из любой игры и адаптировать их под свои задачи 3D-печати.
+        </p>
+    </div>
+
+    <!-- Bonus -->
+    <div class="course-block highlight">
+        <h3>Дополнительно</h3>
+        <p>
+            После покупки ты получаешь безлимитный доступ к закрытому каналу,
+            где я регулярно публикую новые гайды по оптимизации моделей
+            и делюсь актуальными новостями и изменениями по софту.
+        </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="buy-button" style="pointer-events:none; opacity:0.7;">
+        Доступ скоро будет открыт
+    </div>
+
 </div>
 {% endblock %}
