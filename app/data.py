@@ -417,6 +417,68 @@ figures = [
     {
         "id": "ri-001",
         "collection_id": "ML_Collection",
+        "title": "Chibi Lun",
+        "price": "₽6666",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "MLBB Collection",
+        "size": "7 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/chibi_lun.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-001",
+        "collection_id": "ML_Collection",
+        "title": "Chibi Lans",
+        "price": "₽6666",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "MLBB Collection",
+        "size": "7 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/chibi_lans.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-001",
+        "collection_id": "ML_Collection",
+        "title": "Chibi Aurora",
+        "price": "₽6666",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "MLBB Collection",
+        "size": "7 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/chibi_aur.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-001",
+        "collection_id": "ML_Collection",
+        "title": "Lesley",
+        "price": "₽17000",
+        "status": "order",
+        "status_text": "На заказ",
+        "description": "MLBB Collection",
+        "size": "17 см",
+        "material": "PLA",
+        "images": [
+            "/static/images/lesley.jpg",
+            "/static/images/lesley2.jpg",
+            "/static/images/lesley3.jpg"
+        ],
+        "is_available": True
+    },
+    {
+        "id": "ri-001",
+        "collection_id": "ML_Collection",
         "title": "Fanny Aspirant",
         "price": "₽17000",
         "status": "order",
