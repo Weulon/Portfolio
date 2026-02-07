@@ -415,7 +415,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-001",
+        "id": "ri-001-chibi-lun",
         "collection_id": "ML_Collection",
         "title": "Chibi Lun",
         "price": "₽6666",
@@ -430,7 +430,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-001",
+        "id": "ri-001-chibi-lans",
         "collection_id": "ML_Collection",
         "title": "Chibi Lans",
         "price": "₽6666",
@@ -445,7 +445,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-001",
+        "id": "ri-001-chibi-aur",
         "collection_id": "ML_Collection",
         "title": "Chibi Aurora",
         "price": "₽6666",
@@ -460,7 +460,7 @@ figures = [
         "is_available": True
     },
     {
-        "id": "ri-001",
+        "id": "ri-001-lesley",
         "collection_id": "ML_Collection",
         "title": "Lesley",
         "price": "₽17000",
